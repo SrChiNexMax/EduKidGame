@@ -9,7 +9,7 @@
     <body>
         <!--Cabecera-->
             <div>
-                <a class="logo">
+                <a class="logo" href="index.jsp">
                     <div class="svg-logo-div">
                         <img src="Recursos/img/bee.svg" alt="Logo EduKidGame"/>
                         <svg>
@@ -32,6 +32,9 @@
                 <div>
                     x
                 </div>
+                <video autoplay muted loop class="fondovideo">
+                    <source src="Recursos/img/vfondo.mp4" type="video/mp4">
+                </video>
             </div>
     </body>
 </html>
