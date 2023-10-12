@@ -4,37 +4,52 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
-        <link rel="stylesheet" href="Recursos/css/estilo.css">
+        <link rel="stylesheet" href="Recursos/css/estilo2.css">
     </head>
     <body>
-        <!--Cabecera-->
-            <div>
-                <a class="logo" href="index.jsp">
-                    <div class="svg-logo-div">
-                        <img src="Recursos/img/bee.svg" alt="Logo EduKidGame"/>
-                        <svg>
-                    </div>
-                    <div class="titulo">
-                        EduKidGame
-                    </div>
-                </a>
+        <div>
+            <div class="titulo1">
+                EduKid
             </div>
-            <!--Fin de Cabecera-->
-            
-            <!--Cuerpo (2 Secciones: Instrucciones y Botones de dificultad)-->
-            <div class="cuerpo">
-                <div class="d1">
-                    <h1>¿Como jugar?</h1>
-                    <p>
-                        Para empezar a jugar debes seleccionar una de las 2 dificultades <em><strong>PRE ESCOLAR</strong></em> o <em><strong>PRIMARIA</strong></em>
-                    </p>
-                </div>
-                <div>
-                    x
-                </div>
-                <video autoplay muted loop class="fondovideo">
-                    <source src="Recursos/img/vfondo.mp4" type="video/mp4">
-                </video>
+            <div class="titulo2">
+                Game
             </div>
+
+            <a>
+                <div class="boton1">
+                    Jugar
+                </div>
+            </a>
+
+            <a>
+                <div class="boton2">
+                    Como Jugar
+                </div>
+            </a>
+        </div>
+       <div class="florF1">
+            <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
+        </div>
+        <div class="florF2">
+            <img class="florImg2" src="Recursos/img/flor.png" alt="Girasol"/>
+        </div>
+        <div class="florF3">
+            <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
+        </div>
+        <div class="florF4">
+            <img class="florImg2" src="Recursos/img/flor.png" alt="Girasol"/>
+        </div>
+        <div class="panalF1">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+        </div>
+        <div class="panalF2">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+        </div>
+        <div class="panalF3">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+        </div>
+        <div class="panalF4">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+        </div>
     </body>
 </html>
