@@ -34,27 +34,28 @@
         <!--Cuerpo (2 Secciones: Instrucciones y Botones de dificultad)-->
         <div class="cuerpo">
             <div class="f1">
-                ¿COMO<br>JUGAR?
+                <p class='p1'>¿COMO<br>JUGAR?</p>
             </div>
             <div class='f2'>
-                <div class="f1">
-                <p class='p1'>¿COMO<br>JUGAR?</p>
-            </div>
+                <div class="cuadro1">
+                    <img class='svg' src="Recursos/img/check1.svg"/> Para empezar a jugar debes seleccionar una de las 2 dificultades
+                </div>
             </div>
             <div class="f3">
-                <div class="f1">
-                <p class='p1'>¿COMO<br>JUGAR?</p>
+                <div class="cuadro2">
+                    <img class='svg' src="Recursos/img/check1.svg"/> Se te mostrara panales de abeja en el que debes solucionar las operaciones matematicas para llegar a la colmena
+                </div>
             </div>
-            </div>
+
         </div>
         <div class="panal1">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
-            </div>
-            <div class="panal2">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
-            </div>
-            <div class="panal3">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
-            </div>
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
+        <div class="panal2">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
+        <div class="panal3">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
     </body>
 </html>
