@@ -1,0 +1,125 @@
+@font-face{
+    font-family: 'Bukhari';
+    src:url(../fuentes/Bukhari-Script.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Horta';
+    src:url(../fuentes/Horta.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Minnie';
+    src:url(../fuentes/Minnie.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #E9D5B0;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
+
+.Cabezal{
+    height: 11%;
+    width: 100vw;
+    background-color: #DD860A;
+    position: relative;
+}
+
+.cuerpo {
+    display: flex;
+    height: 89%;
+    width: 100vw;
+}
+
+
+.p1{
+    position: relative;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-45%);
+}
+
+.botonInicio{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    top: 10%;
+    left: 0.8%;
+}
+
+.titulo1{
+    color: white;
+    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
+    font-size: 3rem;
+    font-family: 'Bukhari';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) rotate(350deg);
+    z-index: 1;
+}
+.titulo2{
+    color: white;
+    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
+    font-size: 3rem;
+    font-family: 'Bukhari';
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%) rotate(350deg);
+    z-index: 1;
+}
+.circulo{
+    width: 200px;
+    height: 200px;
+    background-color: #DD860A;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.abejaCJI{
+    width: 50px;
+    height: 50px;
+}
+
+.abejaCJ{
+    position: fixed;
+    top: 1%;
+    left: 43%;
+    transform: rotate(350deg);
+    z-index: 1;
+}
+
+.cuerpo{
+    height: 89%;
+    background-image: url('../img/fondo.jpg');
+    background-size: contain;
+}
+

@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
         <link rel="stylesheet" href="Recursos/css/estiloIndex.css">
-        <link rel="icon" type="image/svg+xml" href="Recursos/img/bee.svg">
+        <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/script.js"></script>
     </head>
     <body>

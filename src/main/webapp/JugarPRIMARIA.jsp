@@ -4,8 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
-        <link rel="stylesheet" href="Recursos/css/estiloComoJugar.css">
-        <link rel="icon" type="image/svg+xml" href="Recursos/img/bee.svg">
+        <link rel="stylesheet" href="Recursos/css/estiloPRIMARIA.css">
+        <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/script.js"></script>
     </head>
     <body>
@@ -32,6 +32,8 @@
         </div>
         <!--Fin de Cabecera-->
 
-        
+        <div class="cuerpo">
+            
+        </div>
     </body>
 </html>

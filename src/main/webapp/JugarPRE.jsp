@@ -4,8 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
-        <link rel="stylesheet" href="Recursos/css/estiloComoJugar.css">
-        <link rel="icon" type="image/svg+xml" href="Recursos/img/bee.svg">
+        <link rel="stylesheet" href="Recursos/css/estiloPRE.css">
+        <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/script.js"></script>
     </head>
     <body>
@@ -32,6 +32,31 @@
         </div>
         <!--Fin de Cabecera-->
 
-        
+        <div class="cuerpo">
+            <div class="col">
+                <img class="colI" src="Recursos/img/colmena.png">
+            </div>
+            <div class="panal1">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal2">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="panal3">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal4">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="panal5">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal6">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="abeja">
+                <img class="abejaImg" src="Recursos/img/abeja.png">
+            </div>
+        </div>
     </body>
 </html>
