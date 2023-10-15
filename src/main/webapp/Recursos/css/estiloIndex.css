@@ -99,7 +99,7 @@ a:visited{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to bottom, #AD6905, #FAA606);
+    background: linear-gradient(to bottom, #AD6905, #DD860A);
     border: 10px solid #f2c561;
     border-radius: 10px;
 }

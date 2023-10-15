@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
         <link rel="stylesheet" href="Recursos/css/estiloComoJugar.css">
+        <link rel="icon" type="image/svg+xml" href="Recursos/img/bee.svg">
         <script src="Recursos/js/script.js"></script>
     </head>
     <body>
@@ -45,12 +46,12 @@
                 </div>
             </div>
             <div class="f3">
-                <a href="#">
+                <a href="JugarPRE.jsp">
                     <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="cuadro3">
                         PRE ESCOLAR
                     </div>
                 </a>
-                <a>
+                <a href="JugarPRIMARIA.jsp">
                     <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="cuadro4">
                         PRIMARIA
                     </div>
