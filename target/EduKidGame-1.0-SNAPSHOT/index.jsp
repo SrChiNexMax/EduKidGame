@@ -17,7 +17,7 @@
             </div>
 
             <a>
-                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton1">
+                <div onclick='reproducirBoton(), mostrarDif()' onmouseover='reproducirBoton()' class="boton1">
                     Jugar
                 </div>
             </a>
@@ -28,6 +28,17 @@
                 </div>
             </a>
         </div>
+
+        <div id="popupdif" class="popupdif">
+            <div class="botondif" onmouseover='reproducirBoton()' onclick="redirigir('pre')">
+                PREESCOLAR
+            </div>
+            <div class="botondif" onmouseover='reproducirBoton()' onclick="redirigir('primaria')">
+                PRIMARIA
+            </div>
+        </div>
+
+        <!--Elementos de fondo-->
         <div>
             <div class="abejaF1">
                 <img class="abejaImg" src="Recursos/img/abejaT.png" alt="Abeja"/>

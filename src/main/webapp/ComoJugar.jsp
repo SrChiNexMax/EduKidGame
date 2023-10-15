@@ -40,11 +40,26 @@
                 <div class="cuadro1">
                     <img class='svg' src="Recursos/img/check1.svg"/> Para empezar a jugar debes seleccionar una de las 2 dificultades
                 </div>
-            </div>
-            <div class="f3">
                 <div class="cuadro2">
                     <img class='svg' src="Recursos/img/check1.svg"/> Se te mostrara panales de abeja en el que debes solucionar las operaciones matematicas para llegar a la colmena
                 </div>
+            </div>
+            <div class="f3">
+                <a href="#">
+                    <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="cuadro3">
+                        PRE ESCOLAR
+                    </div>
+                </a>
+                <a>
+                    <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="cuadro4">
+                        PRIMARIA
+                    </div>
+                </a>
+
+                <img src="Recursos/img/abejaPRE.png" class="abejaPRE">
+                <img src="Recursos/img/abejaPRIMARIA.png" class="abejaPRIMARIA">
+                <img src="Recursos/img/sr.png" class="sr">
+                <img src="Recursos/img/srmd.png" class="srmd">
             </div>
 
         </div>
