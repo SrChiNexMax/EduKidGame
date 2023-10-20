@@ -33,7 +33,21 @@
         <!--Fin de Cabecera-->
 
         <div class="cuerpo">
-            <div class="col">
+            <div class="tip" onclick='reproducirBoton(), mostrarTip()' onmouseover='reproducirBoton()'>
+                <img src="Recursos/img/bombilla.png" class="bombilla"/>
+                <p>Ayuda</p>
+            </div>
+
+            <div id="abejaTip">
+                <img src="Recursos/img/tipAbeja.png" class="abejaTipImg">
+            </div>
+
+            <div  id="dialog" class="dialogo">
+                Suma (+): Debes unir las unidades de cada numero.<Br><br>
+                Resta (-): Debes restar las unidades del segundo numero al primero.<br><br>
+            </div>
+
+            <div class="col" onclick='reproducirBoton(), mostrarTip()'>
                 <img class="colI" src="Recursos/img/colmena.png">
             </div>
             <div class="panal1">

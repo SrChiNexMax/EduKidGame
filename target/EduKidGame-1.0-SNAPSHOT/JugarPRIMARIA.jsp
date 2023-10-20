@@ -33,7 +33,46 @@
         <!--Fin de Cabecera-->
 
         <div class="cuerpo">
-            
+            <div class="tip" onclick='reproducirBoton(), mostrarTip()' onmouseover='reproducirBoton()'>
+                <img src="Recursos/img/bombilla.png" class="bombilla"/>
+                <p>Ayuda</p>
+            </div>
+
+            <div id="abejaTip">
+                <img src="Recursos/img/tipAbeja.png" class="abejaTipImg">
+            </div>
+
+            <div  id="dialog" class="dialogo oculto">
+                Suma (+): Debes unir las unidades de cada numero.<Br><br>
+                Resta (-): Debes restar las unidades del segundo numero al primero.<br><br>
+                Multiplicar (x): Debes sumar el primer numero la cantidad de veces del segundo numero.<br><Br>
+                Dividir (/): Debes encontrar el numero que multiplicado por el segundo te de el primer numero.
+            </div>
+
+            <div class="col" onclick='reproducirBoton(), mostrarTip()'>
+                <img class="colI" src="Recursos/img/colmena.png">
+            </div>
+            <div class="panal1">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal2">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="panal3">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal4">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="panal5">
+                <img class="panalImg" src="Recursos/img/panal1.png">
+            </div>
+            <div class="panal6">
+                <img class="panalImg" src="Recursos/img/panal.png">
+            </div>
+            <div class="abeja">
+                <img class="abejaImg" src="Recursos/img/abeja.png">
+            </div>
         </div>
     </body>
 </html>
