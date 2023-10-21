@@ -69,7 +69,7 @@
                 <img class="panalImg" src="Recursos/img/panal.png">
             </div>
             <div class="abeja">
-                <img class="abejaImg" src="Recursos/img/abeja.png">
+                <img class="abejaImg" src="Recursos/img/abejaJuego.png">
             </div>
         </div>
     </body>

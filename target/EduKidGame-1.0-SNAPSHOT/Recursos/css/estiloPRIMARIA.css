@@ -196,10 +196,6 @@ a:visited{
     margin: auto;
 }
 
-.oculto {
-    visibility: hidden;
-}
-
 .dialogo{
     position: absolute;
     font-family: 'Gotham';
@@ -212,6 +208,8 @@ a:visited{
     padding: 15px;
     clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 40%, 95% 45%, 87.41% 44.71%, 86.69% 59.26%, 70% 45%, 5% 45%, 0% 40%, 0% 5%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .tip {

@@ -42,7 +42,7 @@
                 <img src="Recursos/img/tipAbeja.png" class="abejaTipImg">
             </div>
 
-            <div  id="dialog" class="dialogo oculto">
+            <div  id="dialog" class="dialogo">
                 Suma (+): Debes unir las unidades de cada numero.<Br><br>
                 Resta (-): Debes restar las unidades del segundo numero al primero.<br><br>
                 Multiplicar (x): Debes sumar el primer numero la cantidad de veces del segundo numero.<br><Br>
@@ -71,7 +71,7 @@
                 <img class="panalImg" src="Recursos/img/panal.png">
             </div>
             <div class="abeja">
-                <img class="abejaImg" src="Recursos/img/abeja.png">
+                <img class="abejaImg" src="Recursos/img/abejaJuego.png">
             </div>
         </div>
     </body>
