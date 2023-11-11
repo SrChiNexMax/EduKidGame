@@ -125,8 +125,6 @@ a:visited{
     z-index: 2;
 }
 
-
-
 .col{
     position: absolute;
     left: 5%;
@@ -143,31 +141,37 @@ a:visited{
 }
 
 .panal1{
+    filter: grayscale(100%);
     position: absolute;
     top: 30%;
     left: 25%;
 }
 .panal2{
+    filter: grayscale(100%);
     position: absolute;
     top: 44.6%;
     left: 30.6%;
 }
 .panal3{
+    filter: grayscale(100%);
     position: absolute;
     top: 40.95%;
     left: 39%;
 }
 .panal4{
+    filter: grayscale(100%);
     position: absolute;
     top: 26.3%;
     left: 44.6%;
 }
 .panal5{
+    filter: grayscale(100%);
     position: absolute;
     top: 30%;
     left: 53%;
 }
 .panal6{
+    filter: grayscale(100%);
     position: absolute;
     top: 44.75%;
     left: 58.60%;
@@ -183,6 +187,23 @@ a:visited{
     left: 70%;
 }
 /*Pära mover a la abejita en porcentaje se suma top: 3.25% left: 1.4%*/
+
+#popup {
+    font-family: 'Gotham';
+    color: white;
+    font-size: 2.2rem;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #F8730E, #DD860A);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 #abejaTip{
     position: fixed;
     top: 50%;
@@ -235,4 +256,8 @@ a:visited{
     height: 90px;
     filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 
+}
+
+#respuestaInput{
+    all: unset;
 }
