@@ -8,7 +8,7 @@
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/script.js"></script>
     </head>
-    <body>
+    <body onclick="Musica()">
 
         <div  id="dialog" class="dialogo">
             En la mágica Tierra de las Abejitas, el camino hacia la colmena ha desaparecido debido a un hechizo travieso de la malvada Avispa Matemágica. Pero no te preocupes, nuestras amigas las abejitas tienen un plan.
@@ -47,5 +47,9 @@
                 <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
             </div>
         </div>
+        <audio id="musicaFondo" loop>
+            <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
     </body>
 </html>

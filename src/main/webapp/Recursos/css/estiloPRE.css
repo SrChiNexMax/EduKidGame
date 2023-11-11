@@ -190,6 +190,8 @@ a:visited{
 
 #popup {
     font-family: 'Gotham';
+    color: white;
+    font-size: 2.2rem;
     display: none;
     position: fixed;
     top: 50%;

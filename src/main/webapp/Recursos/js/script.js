@@ -5,6 +5,12 @@ function reproducirBoton() {
     boton.volume = 0.3;
     boton.play();
 }
+function Musica() {
+    //Funcion para reproducir la musica de la pagina
+    document.getElementById("musicaFondo").play();
+    var musica = document.getElementById("musicaFondo");
+    musica.volume = 0.6;
+}
 
 function mostrarDif() {
     // Muestra las dificultades al hacer clic en "Jugar"
