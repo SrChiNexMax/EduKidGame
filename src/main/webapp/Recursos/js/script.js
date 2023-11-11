@@ -39,3 +39,11 @@ function mostrarTip() {
         dialogo.style.transition = 'opacity 1s ease-in-out';
     }
 }
+
+function redirigirNivel(nivel) {
+    if (nivel === 'preescolar') {
+        window.location.href = 'JugarPRE.jsp';
+    } else if (nivel === 'primaria') {
+        window.location.href = 'JugarPRIMARIA.jsp';
+    }
+}

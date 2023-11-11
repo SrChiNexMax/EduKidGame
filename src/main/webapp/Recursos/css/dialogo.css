@@ -161,11 +161,12 @@ a:visited{
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
     left: 50%;
+    
 }
 .abejaReina{
     position: fixed;
     bottom: -10px;
-    left: 10%;
+    left: 5%;
     z-index: 1;
 }
 
@@ -222,5 +223,26 @@ a:visited{
     position: fixed;
     top: 235px;
     right: -290px;
+}
+
+.botonesNivel {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.botonNivel {
+    margin: 5px;
+    padding: 10px;
+    font-family: 'Minnie'; 
+    font-size: 2rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
 }
 

@@ -17,11 +17,12 @@
                 Game
             </div>
 
-            <a>
-                <div onclick='reproducirBoton(), mostrarDif()' onmouseover='reproducirBoton()' class="boton1">
+            <a href="Dialogo.jsp">
+                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton1">
                     Jugar
-                </div>
+            </div>
             </a>
+
 
             <a href="ComoJugar.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton2">
