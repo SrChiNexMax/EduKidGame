@@ -23,164 +23,17 @@ body, html{
     height: 100vh;
     background-color: #E9D5B0;
     position: relative;
+    overflow: hidden;       
+    
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
-
-a:visited{
-    color: black;
-}
+/*Parte del cabezal*/
 
 .Cabezal{
-    height: 11%;
+    height: 11vh;
     width: 100vw;
     background-color: #DD860A;
     position: relative;
-}
-
-.cuerpo {
-    display: flex;
-    height: 89%;
-    width: 100vw;
-}
-
-.cuerpo .f1{
-    font-family: 'Horta';
-    color: white;
-    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
-    font-size: 12rem;
-    width: 33vw;
-}
-
-.p1{
-    position: relative;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-45%);
-}
-
-.svg{
-    width: 40px;
-    height: 40px;
-    padding-right: 5px;
-}
-
-.cuadro1{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Minnie';
-    font-size: 1.5rem;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 10px solid #F2C560;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 20px;
-    width: 460px;
-    height: 100px;
-    left: 50%;
-    top: 25%;
-    transform: translateX(-50%);
-}
-
-
-.cuadro2{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Minnie';
-    font-size: 1.5rem;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 10px solid #F2C560;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 20px;
-    width: 460px;
-    height: 150px;
-    left: 50%;
-    top: 45%;
-    transform: translateX(-50%);
-}
-
-.cuadro3{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Minnie';
-    font-size: 1.5rem;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 10px solid #F2C560;
-    border-radius: 10px;
-    width: 300px;
-    height: 50px;
-    left: 83%;
-    top: 32%;
-    transform: translateX(-50%);
-}
-
-.cuadro4{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Minnie';
-    font-size: 1.5rem;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 10px solid #F2C560;
-    border-radius: 10px;
-    width: 300px;
-    height: 50px;
-    left: 83%;
-    top: 59%;
-    transform: translateX(-50%);
-}
-
-.abejaPRE{
-    position: absolute;
-    width: 100px;
-    height: 110px;
-    right: 15%;
-    top: 17%;
-}
-
-.abejaPRIMARIA{
-    position: absolute;
-    width: 100px;
-    height: 110px;
-    right: 15%;
-    top: 44%;
-}
-
-.sr{
-    position: absolute;
-    width: 105px;
-    height: 100px;
-    right: 3%;
-    top: 34%;
-}
-
-.srmd{
-    position: absolute;
-    width: 105px;
-    height: 100px;
-    right: 3%;
-    top: 60%;
-}
-
-.cuerpo .f2{
-    width: 33vw;
-}
-
-.cuerpo .f3{
-    width: 33vw;
 }
 
 .botonInicio{
@@ -205,7 +58,7 @@ a:visited{
     font-size: 3rem;
     font-family: 'Bukhari';
     position: absolute;
-    top: 10%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%) rotate(350deg);
     z-index: 1;
@@ -240,10 +93,169 @@ a:visited{
 
 .abejaCJ{
     position: fixed;
-    top: 1%;
-    left: 43%;
+    top: 1.5%;
+    left: 44.5%;
     transform: rotate(350deg);
     z-index: 1;
+    filter: drop-shadow(-5px 0px 10px rgba(0, 0, 0, 0.8));
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+.cuerpo {
+    display: flex;
+    height: 89vh;
+    width: 100vw;
+}
+
+/*Primer Frame de el cuerpo TITULO COMO JUGAR*/
+
+.cuerpo .f1{
+    position: relative;
+    font-family: 'Horta';
+    color: white;
+    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
+    font-size: 12rem;
+    width: 33vw;
+    text-align: center;
+}
+
+/*Segundo Frame de el cuerpo INSTRUCCIONES*/
+
+.cuerpo .f2{
+    width: 33vw;
+}
+
+/*Check de los parrafos de instruccion*/
+
+.svg{
+    width: 40px;
+    height: 40px;
+    padding-right: 5px;
+}
+
+/*Dos cuadros de instrucciones*/
+
+.cuadro1{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+    width: 460px;
+    height: 100px;
+    left: 50%;
+    top: 33%;
+    transform: translateX(-50%);
+}
+
+
+.cuadro2{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+    width: 460px;
+    height: 150px;
+    left: 50%;
+    top: 53%;
+    transform: translateX(-50%);
+}
+
+/*Tercer Frame de el cuerpo BOTONES DE DIFICULTAD*/
+
+.cuerpo .f3{
+    width: 33vw;
+}
+
+/*Dos botones de dificultad*/
+
+.cuadro3{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    left: 83%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.cuadro4{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    left: 83%;
+    top: 59%;
+    transform: translateX(-50%);
+}
+
+.abejaPRE{
+    position: absolute;
+    width: 100px;
+    height: 110px;
+    right: 15%;
+    top: 23.5%;
+}
+
+.abejaPRIMARIA{
+    position: absolute;
+    width: 100px;
+    height: 110px;
+    right: 15%;
+    top: 47.5%;
+}
+
+.sr{
+    position: absolute;
+    width: 105px;
+    height: 100px;
+    right: 5.5%;
+    top: 36%;
+}
+
+.srmd{
+    position: absolute;
+    width: 105px;
+    height: 100px;
+    right: 5%;
+    top: 60%;
 }
 
 .panalImg{
@@ -252,18 +264,18 @@ a:visited{
 }
 
 .panal1{
-    position: fixed;
+    position: absolute;
     bottom: -435px;
     left: -90px;
 }
 .panal2{
-    position: fixed;
+    position: absolute;
     bottom: -465px;
     left: 50%;
     transform: scaleY(-1) translateX(-50%);
 }
 .panal3{
-    position: fixed;
+    position: absolute;
     bottom: -415px;
     right: -105px;
     transform: scaleX(-1);
