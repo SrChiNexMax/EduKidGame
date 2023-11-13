@@ -9,7 +9,7 @@ function Musica() {
     //Funcion para reproducir la musica de la pagina
     document.getElementById("musicaFondo").play();
     var musica = document.getElementById("musicaFondo");
-    musica.volume = 0.6;
+    musica.volume = 0.4;
 }
 
 function mostrarDif() {

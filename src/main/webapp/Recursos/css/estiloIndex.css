@@ -25,7 +25,7 @@ body, html{
     font-size: 10rem;
     font-family: 'Bukhari';
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 50%;
     animation: SyBTitulo 3s linear infinite;
 }
@@ -51,45 +51,59 @@ body, html{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 a:visited{
     color: black;
 }
 
+/*Boton de Jugar y Como Jugar*/
+
 .boton1{
     display: flex;
     font-family: 'Minnie';
     position: absolute;
-    font-size: 2rem;
+    font-size: 3rem;
     top: 65%;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #f2c561;
     border-radius: 10px;
-    width: 400px;
-    height: 50px;
+    width: 450px;
+    height: 60px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.boton1:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 .boton2{
     display: flex;
     font-family: 'Minnie';
     position: absolute;
-    font-size: 2rem;
+    font-size: 3rem;
     top: 78%;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #f2c561;
     border-radius: 10px;
-    width: 400px;
-    height: 50px;
+    width: 450px;
+    height: 60px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.boton2:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 .popupdif{
@@ -115,20 +129,15 @@ a:visited{
     border-radius: 10px;
 }
 
+/*Abeja Titulo*/
 
-.panalImg{
-    width: 500px;
-    height: 500px;
-}
-
-.florImg{
-    width: 225px;
-    height: 450px;
-}
-
-.florImg2{
-    width: 170px;
-    height: 340px;
+.abejaF1{
+    position: fixed;
+    top: 12%;
+    right: 59.5%;
+    transform: rotate(350deg);
+    z-index: 1;
+    animation: abejaSyB 3s linear infinite;
 }
 
 .abejaImg{
@@ -136,28 +145,23 @@ a:visited{
     height: 100px;
 }
 
+/*Abeja Boton Jugar*/
+
+.abejaF2{
+    position: fixed;
+    bottom: 33%;
+    right: 36%;
+    transform: rotate(350deg);
+    z-index: 1;
+    transform: scaleX(-1);
+}
+
 .abejaImg2{
     width: 50px;
     height: 50px;
 }
 
-.abejaF1{
-    position: fixed;
-    top: 8%;
-    right: 62%;
-    transform: rotate(350deg);
-    z-index: 1;
-    animation: abejaSyB 3s linear infinite;
-}
-
-.abejaF2{
-    position: fixed;
-    bottom: 32%;
-    right: 34%;
-    transform: rotate(350deg);
-    z-index: 1;
-    transform: scaleX(-1);
-}
+/*Animacion de Abeja del titulo sube y baja*/
 
 @keyframes abejaSyB {
     0%, 100% {
@@ -175,6 +179,18 @@ a:visited{
     70%{
         transform: translateY(-80px) translateX(40px) rotate(20deg);
     }
+}
+
+/*Decoracion de fondo*/
+
+.florImg{
+    width: 225px;
+    height: 450px;
+}
+
+.florImg2{
+    width: 170px;
+    height: 340px;
 }
 
 .florF1{
@@ -207,6 +223,11 @@ a:visited{
     left: 0px;
     transform: rotate(130deg);
     z-index: 1;
+}
+
+.panalImg{
+    width: 500px;
+    height: 500px;
 }
 
 .panalF1{
