@@ -127,9 +127,10 @@ a:visited{
     transform: translateX(-45%);
 }
 
+/*Parte del juego estructura de panales a la colmena*/
+
 .col{
     position: absolute;
-    left: 5%;
 }
 
 .colI{
@@ -143,29 +144,34 @@ a:visited{
 }
 
 .panal1{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 30%;
+    left: 16%;
+}
+.panal2{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 41.4%;
+    left: 20.5%;
+}
+.panal3{
+    filter: grayscale(100%);
     position: absolute;
     top: 30%;
     left: 25%;
 }
-.panal2{
-    position: absolute;
-    top: 44.6%;
-    left: 30.6%;
-}
-.panal3{
-    position: absolute;
-    top: 40.95%;
-    left: 39%;
-}
 .panal4{
+    filter: grayscale(100%);
     position: absolute;
-    top: 26.3%;
-    left: 44.6%;
+    top: 33%;
+    left: 31.6%;
 }
 .panal5{
+    filter: grayscale(100%);
     position: absolute;
-    top: 30%;
-    left: 53%;
+    top: 44.4%;
+    left: 36%;
 }
 .panal6{
     position: absolute;

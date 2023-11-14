@@ -209,6 +209,11 @@ a:visited{
     transform: translateX(-50%);
 }
 
+.cuadro3:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+}
+
 .cuadro4{
     display: flex;
     position: absolute;
@@ -224,6 +229,11 @@ a:visited{
     left: 83%;
     top: 59%;
     transform: translateX(-50%);
+}
+
+.cuadro4:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 .abejaPRE{
