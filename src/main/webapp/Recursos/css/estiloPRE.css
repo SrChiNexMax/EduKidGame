@@ -28,7 +28,7 @@ body, html{
     padding: 0;
     height: 100vh;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 a{
@@ -61,8 +61,14 @@ a:visited{
     border-radius: 10px;
     width: 100px;
     height: 40px;
-    top: 10%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0.8%;
+}
+
+.botonInicio:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 .titulo1{
@@ -201,6 +207,42 @@ a:visited{
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
+}
+
+#problemaMatematicoDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.pProblema{
+    text-decoration: none;
+    margin: 0;
+}
+
+#contenedorRespuesta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEvaluar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    left: 0.8%;
+}
+
+.btnEvaluar:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 #abejaTip{
@@ -220,14 +262,14 @@ a:visited{
 .dialogo{
     position: absolute;
     font-family: 'Gotham';
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     top: 20%;
     right: 100px;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 240px;
     padding: 15px;
-    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 40%, 95% 45%, 87.41% 44.71%, 86.69% 59.26%, 70% 45%, 5% 45%, 0% 40%, 0% 5%);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 80%, 95% 85%, 85% 85%, 85% 100%, 70% 85%, 5% 85%, 0% 80%, 0% 5%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     opacity: 0;
     transition: opacity 0.4s ease-in-out;

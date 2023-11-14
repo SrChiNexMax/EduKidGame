@@ -67,7 +67,8 @@ function mostrarPopup() {
     popup.style.display = 'block';
     let problemaMatematicoDiv = document.getElementById('problemaMatematicoDiv');
     let problemaMatematico = generarProblemaMatematico();
-    problemaMatematicoDiv.innerHTML = "<p>"+problemaMatematico+"</p>";
+    problemaMatematicoDiv.innerHTML = "<p class='pProblema'>" + problemaMatematico + "</p>";
+    document.getElementById('contenedorRespuesta').style.display = 'flex';
 }
 
 function generarProblemaMatematico() {
@@ -94,7 +95,9 @@ function evaluarRespuesta() {
     if (respuestaCorrecta) {
         mensajeFelicitaciones.style.display = 'block';
         mensajeIntento.style.display = 'none';
-        setTimeout(function() {
+        document.getElementById('respuestaInput').value = '';
+        document.getElementById('contenedorRespuesta').style.display = 'none';
+        setTimeout(function () {
             var popup = document.getElementById('popup');
             popup.style.display = 'none';
 
@@ -105,8 +108,9 @@ function evaluarRespuesta() {
             panalS = null;
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
-        }, 1500);
+        }, 1800);
     } else {
+        document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
     }

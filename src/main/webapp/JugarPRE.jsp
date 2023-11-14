@@ -77,8 +77,11 @@
                 <div id="problemaMatematicoDiv">
                     <!-- El contenido del problema matemático se llenará dinámicamente-->
                 </div>
-                <input type="number" id="respuestaInput" placeholder="Tu respuesta" oninput="validarInput(this)">
-                <button onclick="evaluarRespuesta()">Evaluar</button>
+                <div id="contenedorRespuesta">
+                    <input type="text" id="respuestaInput" placeholder="Tu respuesta" oninput="validarInput(this)">
+                    <div class="btnEvaluar" onclick="evaluarRespuesta()">Evaluar</div>
+                </div>
+
                 <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
                 <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
             </div>
