@@ -23,7 +23,7 @@
             </div>
             </a>
 
-
+            
             <a href="ComoJugar.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton2">
                     Como Jugar
