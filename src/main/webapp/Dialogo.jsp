@@ -18,6 +18,12 @@
             ¿Puedes ayudar a las abejitas a resolver los desafíos y deshacer el hechizo de la Avispa Matemágica? ¡El Valle de las Abejitas cuenta contigo!
         </div>
         <!--Elementos de fondo-->
+        
+        <div class="botonesNivel">
+            <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Preescolar</a>
+            <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' class="botonNivel">Escolar</a>
+        </div>
+        
         <div>
             <div class="abejaReina">
                 <img class="abejaReinaImg" src="Recursos/img/abejaReina.png" alt="Abeja"/>
