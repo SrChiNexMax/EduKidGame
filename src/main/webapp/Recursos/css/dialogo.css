@@ -147,23 +147,29 @@ a:visited{
     width: 50px;
     height: 50px;
 }
-.dialogo{
+
+.dialogo {
     display: flex;
-    position: absolute;
+    flex-direction: column; /* Cambiar la dirección del diseño a columna */
     justify-content: center;
     align-items: center;
-    font-family: 'Gotham';
+    font-family: 'Gotham', sans-serif; /* Cambiar la fuente según tu preferencia */
     font-size: 1.5rem;
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #F2C560;
     border-radius: 10px;
-    width: 700px;
+    width: 70%; /* Ajustar el ancho según sea necesario */
+    max-width: 700px; /* Limitar el ancho máximo para mantener la legibilidad */
     height: 350px;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    
+    margin: 10% auto; /* Ajustar el margen superior según sea necesario y centrar en la pantalla horizontalmente */
+    text-align: justify; /* Justificar el texto */
+    padding: 20px; /* Añadir relleno según sea necesario */
 }
+
+.dialogo p {
+    margin: 0; /* Eliminar márgenes predeterminados del párrafo dentro del cuadro de diálogo */
+}
+
 .abejaReina{
     position: fixed;
     bottom: -10px;
@@ -253,3 +259,4 @@ a:visited{
     background: linear-gradient(to bottom, #E9AB46, #DD8509);
     border: 10px solid #F0C30C;
 }
+

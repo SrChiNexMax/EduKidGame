@@ -11,11 +11,11 @@
     <body onclick="Musica()">
 
         <div  id="dialog" class="dialogo">
-            En la mágica Tierra de las Abejitas, el camino hacia la colmena ha desaparecido debido a un hechizo travieso de la malvada Avispa Matemágica. Pero no te preocupes, nuestras amigas las abejitas tienen un plan.
+            Oh no!!! El camino hacia la colmena ha desaparecido debido a un hechizo malvado. 
+            
+            Acompaña a las abejitas en una aventura a través de problemas matemáticos para hallar el camino a casa donde Cada flor revelará un nuevo tramo 
 
-            Acompaña a las abejitas en una emocionante aventura donde resolverán problemas matemáticos para hacer florecer flores mágicas. Cada flor revelará un nuevo tramo del camino hacia la colmena.
-
-            ¿Puedes ayudar a las abejitas a resolver los desafíos y deshacer el hechizo de la Avispa Matemágica? ¡El Valle de las Abejitas cuenta contigo!
+            ¿Podrás completarlo todo? <br><br><br>¡El Valle de las Abejitas cuenta contigo!
         </div>
         <!--Elementos de fondo-->
         
@@ -23,6 +23,7 @@
             <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Preescolar</a>
             <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' class="botonNivel">Escolar</a>
         </div>
+        
         
         <div>
             <div class="abejaReina">
