@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="Recursos/css/estiloPRE.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
 
-        <script src="Recursos/js/script.js"></script>
+        <script src="Recursos/js/scriptPRE.js"></script>
     </head>
     <body onclick="Musica()">
         <!--Cabecera-->

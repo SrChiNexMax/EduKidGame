@@ -191,7 +191,8 @@ a:visited{
     top: 50.5%;
     left: 65%;
 }
-/*Pära mover a la abejita en porcentaje se suma top: 3.25% left: 1.4%*/
+
+/*Problema matematico*/
 
 #popup {
     font-family: 'Gotham';
@@ -245,6 +246,12 @@ a:visited{
     border: 10px solid #F0C30C;
 }
 
+#respuestaInput{
+    all: unset;
+}
+
+/*Parte del TIP*/
+
 #abejaTip{
     position: fixed;
     top: 50%;
@@ -297,8 +304,4 @@ a:visited{
     height: 90px;
     filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 
-}
-
-#respuestaInput{
-    all: unset;
 }

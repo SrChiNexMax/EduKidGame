@@ -40,6 +40,8 @@ a:visited{
     color: black;
 }
 
+/*Parte de Cabezal*/
+
 .Cabezal{
     height: 11vh;
     width: 100vw;
@@ -116,6 +118,8 @@ a:visited{
     filter: drop-shadow(-5px 0px 10px rgba(0, 0, 0, 0.8));
 }
 
+/*Parte del cuerpo*/
+
 .cuerpo{
     display: flex;
     height: 89%;
@@ -123,13 +127,6 @@ a:visited{
     position: absolute;
     background-image: url('../img/fondo.jpg');
     background-size: contain;
-}
-
-.p1{
-    position: relative;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-45%);
 }
 
 /*Parte del juego estructura de panales a la colmena*/
@@ -179,20 +176,62 @@ a:visited{
     left: 36%;
 }
 .panal6{
+    filter: grayscale(100%);
     position: absolute;
-    top: 44.75%;
-    left: 58.60%;
+    top: 55.5%;
+    left: 31.6%;
 }
+
+.panal7{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 66.5%;
+    left: 36%;
+}
+.panal8{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 63.6%;
+    left: 42.5%;
+}
+.panal9{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 52.1%;
+    left: 46.9%;
+}
+.panal10{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 41%;
+    left: 51.3%;
+}
+.panal11{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 44%;
+    left: 58%;
+}
+.panal12{
+    filter: grayscale(100%);
+    position: absolute;
+    top: 55.2%;
+    left: 62.5%;
+}
+
+/*Parte del TIP*/
+
 .abejaImg{
     width: 113.5px;
     height: 100px;
+    transform: scaleX(-1);
 }
 .abeja{
     position: absolute;
-    top: 48%;
-    left: 70%;
+    top: 57%;
+    left: 71%;
 }
-/*Pära mover a la abejita en porcentaje se suma top: 3.25% left: 1.4%*/
+
 #abejaTip{
     position: fixed;
     top: 50%;
@@ -210,14 +249,14 @@ a:visited{
 .dialogo{
     position: absolute;
     font-family: 'Gotham';
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: white;
-    top: 80px;
+    top: 50px;
     right: 100px;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 360px;
     padding: 15px;
-    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 40%, 95% 45%, 87.41% 44.71%, 86.69% 59.26%, 70% 45%, 5% 45%, 0% 40%, 0% 5%);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 80%, 95% 85%, 85% 85%, 85% 100%, 70% 85%, 5% 85%, 0% 80%, 0% 5%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -246,4 +285,62 @@ a:visited{
     height: 90px;
     filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 
+}
+
+/*Parte del problema matematico*/
+
+#popup {
+    font-family: 'Gotham';
+    color: white;
+    font-size: 2.2rem;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #F8730E, #DD860A);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
+}
+
+#problemaMatematicoDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.pProblema{
+    text-decoration: none;
+    margin: 0;
+}
+
+#contenedorRespuesta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEvaluar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    left: 0.8%;
+}
+
+.btnEvaluar:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+}
+
+#respuestaInput{
+    all: unset;
 }
