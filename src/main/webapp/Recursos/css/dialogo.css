@@ -253,27 +253,18 @@ a:visited{
     color: black;
     text-decoration: none;
     cursor: pointer;
-    position: relative; /* Añadir posición relativa para que la posición absoluta funcione correctamente */
+    position: relative; 
 }
 
 .botonNivel img {
-    position: absolute; /* Posición absoluta con respecto al botón */
+    position: absolute; 
     top: 0;
     left: 0;
-    width: 30px; /* Ajustar el tamaño según sea necesario */
-    height: 30px; /* Ajustar el tamaño según sea necesario */
-    margin-right: 10px; /* Añadir un margen derecho para separar la imagen del texto */
-    transition: left 2s ease-in-out; /* Añadir una transición suave */
-    animation: moveRightLeft 4s infinite linear; /* Animación de movimiento de derecha a izquierda */
-}
-
-@keyframes moveRightLeft {
-    0%, 100% {
-        left: 0; /* Posición inicial y final */
-    }
-    50% {
-        left: calc(100% - 30px); /* Mitad de la animación, desplazamiento máximo a la izquierda */
-    }
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; 
+    transition: left 2s ease-in-out; 
+    animation: moveRightLeft 4s infinite linear;
 }
 
 .botonNivel:hover {
