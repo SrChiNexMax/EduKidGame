@@ -20,8 +20,10 @@
         <!--Elementos de fondo-->
         
         <div class="botonesNivel">
-            <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Preescolar</a>
+            <img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja"/> 
+            <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Pre escolar</a>
             <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' class="botonNivel">Escolar</a>
+            <img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja"/> 
         </div>
         
         
