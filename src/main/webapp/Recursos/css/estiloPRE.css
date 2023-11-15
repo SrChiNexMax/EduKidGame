@@ -33,33 +33,20 @@ body, html{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 a:visited{
     color: black;
 }
 
+/*Parte del cabezal*/
+
 .Cabezal{
-    height: 11%;
+    height: 11vh;
     width: 100vw;
     background-color: #DD860A;
     position: relative;
-}
-
-.cuerpo{
-    display: flex;
-    height: 89%;
-    width: 100vw;
-    position: absolute;
-    background-image: url('../img/fondo.jpg');
-    background-size: contain;
-}
-
-.p1{
-    position: relative;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-45%);
 }
 
 .botonInicio{
@@ -74,8 +61,14 @@ a:visited{
     border-radius: 10px;
     width: 100px;
     height: 40px;
-    top: 10%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0.8%;
+}
+
+.botonInicio:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
 
 .titulo1{
@@ -84,7 +77,7 @@ a:visited{
     font-size: 3rem;
     font-family: 'Bukhari';
     position: absolute;
-    top: 10%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%) rotate(350deg);
     z-index: 2;
@@ -119,15 +112,27 @@ a:visited{
 
 .abejaCJ{
     position: fixed;
-    top: 1%;
-    left: 43%;
+    top: 1.5%;
+    left: 44.5%;
     transform: rotate(350deg);
     z-index: 2;
+    filter: drop-shadow(-5px 0px 10px rgba(0, 0, 0, 0.8));
 }
+
+.cuerpo{
+    display: flex;
+    height: 89%;
+    width: 100vw;
+    position: absolute;
+    background-image: url('../img/fondo.jpg');
+    background-size: contain;
+}
+
+/*Parte del juego estructura de panales a la colmena*/
 
 .col{
     position: absolute;
-    left: 5%;
+    left:15%;
 }
 
 .colI{
@@ -144,37 +149,37 @@ a:visited{
     filter: grayscale(100%);
     position: absolute;
     top: 30%;
-    left: 25%;
+    left: 31%;
 }
 .panal2{
     filter: grayscale(100%);
     position: absolute;
-    top: 44.6%;
-    left: 30.6%;
+    top: 41.4%;
+    left: 35.5%;
 }
 .panal3{
     filter: grayscale(100%);
     position: absolute;
-    top: 40.95%;
-    left: 39%;
+    top: 30%;
+    left: 40%;
 }
 .panal4{
     filter: grayscale(100%);
     position: absolute;
-    top: 26.3%;
+    top: 41%;
     left: 44.6%;
 }
 .panal5{
     filter: grayscale(100%);
     position: absolute;
-    top: 30%;
-    left: 53%;
+    top: 52.2%;
+    left: 49.1%;
 }
 .panal6{
     filter: grayscale(100%);
     position: absolute;
-    top: 44.75%;
-    left: 58.60%;
+    top: 49.5%;
+    left: 55.7%;
 }
 .abejaImg{
     width: 113.5px;
@@ -183,10 +188,11 @@ a:visited{
 }
 .abeja{
     position: absolute;
-    top: 48%;
-    left: 70%;
+    top: 50.5%;
+    left: 65%;
 }
-/*Pära mover a la abejita en porcentaje se suma top: 3.25% left: 1.4%*/
+
+/*Problema matematico*/
 
 #popup {
     font-family: 'Gotham';
@@ -202,7 +208,49 @@ a:visited{
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
 }
+
+#problemaMatematicoDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.pProblema{
+    text-decoration: none;
+    margin: 0;
+}
+
+#contenedorRespuesta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEvaluar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    left: 0.8%;
+}
+
+.btnEvaluar:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+}
+
+#respuestaInput{
+    all: unset;
+}
+
+/*Parte del TIP*/
 
 #abejaTip{
     position: fixed;
@@ -221,14 +269,14 @@ a:visited{
 .dialogo{
     position: absolute;
     font-family: 'Gotham';
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
-    top: 80px;
+    top: 20%;
     right: 100px;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 240px;
     padding: 15px;
-    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 40%, 95% 45%, 87.41% 44.71%, 86.69% 59.26%, 70% 45%, 5% 45%, 0% 40%, 0% 5%);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 80%, 95% 85%, 85% 85%, 85% 100%, 70% 85%, 5% 85%, 0% 80%, 0% 5%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -256,8 +304,4 @@ a:visited{
     height: 90px;
     filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 
-}
-
-#respuestaInput{
-    all: unset;
 }

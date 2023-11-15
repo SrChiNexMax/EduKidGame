@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="Recursos/css/estiloPRE.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
 
-        <script src="Recursos/js/script.js"></script>
+        <script src="Recursos/js/scriptPRE.js"></script>
     </head>
     <body onclick="Musica()">
         <!--Cabecera-->
@@ -77,8 +77,11 @@
                 <div id="problemaMatematicoDiv">
                     <!-- El contenido del problema matemático se llenará dinámicamente-->
                 </div>
-                <input type="number" id="respuestaInput" placeholder="Tu respuesta" oninput="validarInput(this)">
-                <button onclick="evaluarRespuesta()">Evaluar</button>
+                <div id="contenedorRespuesta">
+                    <input type="text" id="respuestaInput" placeholder="Tu respuesta" oninput="validarInput(this)">
+                    <div class="btnEvaluar" onclick="evaluarRespuesta()">Evaluar</div>
+                </div>
+
                 <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
                 <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
             </div>
