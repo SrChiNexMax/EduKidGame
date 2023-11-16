@@ -10,6 +10,7 @@
     </head>
     <body onclick="Musica()">
 
+    <div class="dialogo-container">
         <div  id="dialog" class="dialogo">
             Oh no!!! El camino hacia la colmena ha desaparecido debido a un hechizo malvado. 
             
@@ -20,12 +21,12 @@
         <!--Elementos de fondo-->
         
         <div class="botonesNivel">
-            <img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja"/> 
+            <a href="JugarPRE.jsp"><img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja"></a> 
             <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Pre escolar</a>
             <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' class="botonNivel">Escolar</a>
-            <img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja"/> 
+            <a href="JugarPRIMARIA.jsp"><img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja"></a>
         </div>
-        
+    </div>
         
         <div>
             <div class="abejaReina">

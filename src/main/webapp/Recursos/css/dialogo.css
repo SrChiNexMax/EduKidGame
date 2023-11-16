@@ -17,6 +17,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html{
     margin: 0;
     padding: 0;
@@ -148,26 +155,43 @@ a:visited{
     height: 50px;
 }
 
+.dialogo-container {
+    position: relative;
+    overflow: hidden;
+}
+
 .dialogo {
     display: flex;
-    flex-direction: column; /* Cambiar la dirección del diseño a columna */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Gotham', sans-serif; /* Cambiar la fuente según tu preferencia */
+    font-family: 'Comic Sans MS', sans-serif;
     font-size: 1.5rem;
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #F2C560;
-    border-radius: 10px;
-    width: 70%; /* Ajustar el ancho según sea necesario */
-    max-width: 700px; /* Limitar el ancho máximo para mantener la legibilidad */
+    border-radius: 90px; /* Utiliza un valor grande para dar forma de nube */
+    width: 70%;
+    max-width: 700px;
     height: 350px;
-    margin: 10% auto; /* Ajustar el margen superior según sea necesario y centrar en la pantalla horizontalmente */
-    text-align: justify; /* Justificar el texto */
-    padding: 20px; /* Añadir relleno según sea necesario */
+    margin: 10% auto;
+    text-align: justify;
+    padding: 20px;
+    position: relative;
+    animation: flotar 10s ease-in-out infinite; /* Ajusta la duración y el tipo de animación según tus preferencias */
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .dialogo p {
-    margin: 0; /* Eliminar márgenes predeterminados del párrafo dentro del cuadro de diálogo */
+    font-family: 'Comic Sans MS', sans-seriff;
+    margin: 0;
 }
 
 .abejaReina{
