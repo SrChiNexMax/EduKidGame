@@ -28,3 +28,19 @@ function redirigir(id) {
     // Oculta el popup después de la redirección
     document.getElementById('popupdif').style.display = 'none';
 }
+
+function iniciarAnimacionBoton() {
+    var botones = document.querySelectorAll('.botonNivel');
+    botones.forEach(function(boton) {
+        boton.addEventListener('mouseover', function() {
+            boton.classList.add('flotarBoton');
+        });
+        boton.addEventListener('mouseout', function() {
+            boton.classList.remove('flotarBoton');
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    iniciarAnimacionBoton();
+});

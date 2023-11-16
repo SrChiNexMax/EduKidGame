@@ -16,15 +16,23 @@
             
             Acompaña a las abejitas en una aventura a través de problemas matemáticos para hallar el camino a casa donde Cada flor revelará un nuevo tramo 
 
-            ¿Podrás completarlo todo? <br><br><br>¡El Valle de las Abejitas cuenta contigo!
+            <br><br>¿Podrás completarlo todo? <br><br>¡El Valle de las Abejitas cuenta contigo!
         </div>
         <!--Elementos de fondo-->
         
         <div class="botonesNivel">
-            <a href="JugarPRE.jsp"><img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja"></a> 
-            <a href="JugarPRE.jsp" onclick='reproducirBoton()' class="botonNivel">Pre escolar</a>
-            <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' class="botonNivel">Escolar</a>
-            <a href="JugarPRIMARIA.jsp"><img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja"></a>
+            <a href="JugarPRE.jsp">
+                <img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja">
+            </a> 
+            <a href="JugarPRE.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
+                Pre escolar
+            </a>
+            <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
+                Escolar
+            </a>
+            <a href="JugarPRIMARIA.jsp">
+                <img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja">
+            </a>
         </div>
     </div>
         
