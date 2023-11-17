@@ -344,3 +344,29 @@ a:visited{
 #respuestaInput{
     all: unset;
 }
+
+.botonTerminar {
+    display: flex;
+    font-family: 'Minnie';
+    position: absolute;
+    font-size: 2rem;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: black; /* Agregado para que el texto sea visible en el botón */
+    text-decoration: none; /* Agregado para quitar el subrayado en el texto */
+}
+
+.botonTerminar:hover {
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+    transform: translateY(-10px);
+}

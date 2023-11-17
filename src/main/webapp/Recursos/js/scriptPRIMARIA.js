@@ -111,3 +111,27 @@ function mostrarTip() {
         dialogo.style.transition = 'opacity 1s ease-in-out';
     }
 }
+
+// Agrega esta función al final de tu script
+function terminarJuego() {
+    console.log("Terminar juego clicado");
+    // Verifica si todas las respuestas son correctas
+    if (todasLasRespuestasSonCorrectas()) {
+        mostrarMensajeExito();
+    } else {
+        mostrarMensajeError();
+    }
+}
+
+function mostrarMensajeExito() {
+    var mensajeExito = document.getElementById('mensajeExito');
+    mensajeExito.style.display = 'block';
+    setTimeout(function () {
+        mensajeExito.style.display = 'none';
+        reiniciarConteoRespuestas();
+    }, 3000); // Oculta el mensaje después de 3 segundos (ajusta según tus necesidades)
+}
+
+function mostrarMensajeError() {
+    alert("Termina por completo el juego");
+}
