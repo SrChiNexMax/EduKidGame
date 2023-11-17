@@ -7,40 +7,40 @@ function reproducirBoton() {
 }
 function Musica() {
     //Funcion para reproducir la musica de la pagina
-    document.getElementById("musicaFondo").play();
     var musica = document.getElementById("musicaFondo");
-    musica.volume = 0.4;
+    document.getElementById("musicaFondo").play();
+    var volumenAlmacenado = localStorage.getItem('volumen');
+    musica.volume = volumenAlmacenado;
 }
 
-function mostrarDif() {
-    // Muestra las dificultades al hacer clic en "Jugar"
-    document.getElementById('popupdif').style.display = 'flex';
-}
 
 function redirigir(id) {
     // Redirige a la página correspondiente según la opción seleccionada
-    if (id === 'pre') {
-        window.location.href = 'JugarPRE.jsp';
-    } else if (id === 'primaria') {
-        window.location.href = 'JugarPRIMARIA.jsp';
+    switch (id) {
+        case 'pre':
+            window.location.href = 'JugarPRE.jsp';
+            break;
+        case 'primaria':
+            window.location.href = 'JugarPRIMARIA.jsp';
+            break;
+        case 'ajustes':
+            window.location.href = 'Ajustes.jsp';
+            break;
     }
-
-    // Oculta el popup después de la redirección
-    document.getElementById('popupdif').style.display = 'none';
 }
 
 function iniciarAnimacionBoton() {
     var botones = document.querySelectorAll('.botonNivel');
-    botones.forEach(function(boton) {
-        boton.addEventListener('mouseover', function() {
+    botones.forEach(function (boton) {
+        boton.addEventListener('mouseover', function () {
             boton.classList.add('flotarBoton');
         });
-        boton.addEventListener('mouseout', function() {
+        boton.addEventListener('mouseout', function () {
             boton.classList.remove('flotarBoton');
         });
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     iniciarAnimacionBoton();
 });

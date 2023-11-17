@@ -9,9 +9,10 @@ function reproducirBoton() {
 }
 function Musica() {
     //Funcion para reproducir la musica de la pagina
-    document.getElementById("musicaFondo").play();
     var musica = document.getElementById("musicaFondo");
-    musica.volume = 0.4;
+    document.getElementById("musicaFondo").play();
+    var volumenAlmacenado = localStorage.getItem('volumen');
+    musica.volume = volumenAlmacenado;
 }
 
 function mostrarPopup() {

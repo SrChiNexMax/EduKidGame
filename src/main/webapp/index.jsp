@@ -20,10 +20,10 @@
             <a href="Dialogo.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton1">
                     Jugar
-            </div>
+                </div>
             </a>
 
-            
+
             <a href="ComoJugar.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton2">
                     Como Jugar
@@ -74,6 +74,12 @@
             </div>
         </div>
 
+
+        <div class="seccionAjuste" onclick="reproducirBoton(), redirigir('ajustes')" onmouseover='reproducirBoton()'>
+            <img class="ajustes" src="Recursos/img/ajustes.png">
+            <p>Ajustes</p>
+        </div>
+        
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
