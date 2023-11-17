@@ -1,4 +1,5 @@
 var ejerciciosCompletados = 0;
+var respuestasCorrectas = 0;
 var totalEjercicios = 12; // Actualiza esto con el número total de ejercicios
 
 var panalS = null;
@@ -60,6 +61,14 @@ function evaluarRespuesta() {
         mensajeIntento.style.display = 'none';
         document.getElementById('respuestaInput').value = '';
         document.getElementById('contenedorRespuesta').style.display = 'none';
+        
+        respuestasCorrectas++; // Incrementa el contador de respuestas correctas
+        
+        if (respuestasCorrectas % 3 === 0) {
+            // Cada 3 respuestas correctas, muestra el mensaje de ánimo
+                setTimeout(mostrarMensajeAnimo, 1800);
+        }
+        
         setTimeout(function () {
             var popup = document.getElementById('popup');
             popup.style.display = 'none';
@@ -141,4 +150,16 @@ function mostrarDialogoExito() {
     setTimeout(function () {
         document.body.removeChild(dialogoExito);
     }, 5000);
+}
+
+function mostrarMensajeAnimo() {
+    // Muestra el mensaje de ánimo
+    var mensajeAnimo = document.createElement('div');
+    mensajeAnimo.className = 'dialogo-exito';
+    mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+    document.body.appendChild(mensajeAnimo);
+
+    setTimeout(function () {
+        document.body.removeChild(mensajeAnimo);
+    }, 1800);
 }
