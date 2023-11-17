@@ -305,3 +305,20 @@ a:visited{
     filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 5px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 5px rgba(0, 0, 0, 0.5));
 
 }
+
+.dialogo-exito {
+    font-family: 'Gotham';
+    color: white;
+    font-size: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #F8730E, #DD860A);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    z-index: 9999; /* Asegura que esté en la parte superior */
+}

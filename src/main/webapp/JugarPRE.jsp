@@ -6,7 +6,6 @@
         <title>EduKidGame</title>
         <link rel="stylesheet" href="Recursos/css/estiloPRE.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
-
         <script src="Recursos/js/scriptPRE.js"></script>
     </head>
     <body onclick="Musica()">
@@ -84,6 +83,8 @@
 
                 <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
                 <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
+                
+                <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
             </div>
         </div>
         <audio id="musicaFondo" loop>
