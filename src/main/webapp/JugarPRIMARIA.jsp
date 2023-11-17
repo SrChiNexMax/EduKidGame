@@ -104,6 +104,9 @@
 
             <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
             <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
+            
+            <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
+
         </div>
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">

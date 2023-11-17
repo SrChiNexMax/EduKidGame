@@ -1,3 +1,7 @@
+var ejerciciosCompletados = 0;
+var totalEjercicios = 6;
+
+
 var panalS = null;
 
 function reproducirBoton() {
@@ -64,6 +68,14 @@ function evaluarRespuesta() {
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
         }, 1800);
+        
+         ejerciciosCompletados++;
+         
+         if (ejerciciosCompletados === totalEjercicios) {
+            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
+            setTimeout(mostrarDialogoExito, 5000);
+        }
+        
     } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
@@ -106,4 +118,22 @@ function mostrarTip() {
         dialogo.style.opacity = '1';
         dialogo.style.transition = 'opacity 1s ease-in-out';
     }
+}
+
+function mostrarDialogoExito() {
+    
+    console.log('Ejercicios completados:', ejerciciosCompletados);
+
+    
+    var dialogoExito = document.createElement('div');
+    dialogoExito.className = 'dialogo-exito';
+    dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
+    document.body.appendChild(dialogoExito);
+    
+    var audioFelicitaciones = document.getElementById('audioFelicitaciones');
+    audioFelicitaciones.play();
+    
+    setTimeout(function () {
+        document.body.removeChild(dialogoExito);
+    }, 5000);
 }
