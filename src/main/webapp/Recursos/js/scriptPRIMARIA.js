@@ -74,6 +74,8 @@ function evaluarRespuesta() {
         }, 1800);
         
         ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
+        
+        document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
 
         if (ejerciciosCompletados === totalEjercicios) {
             // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito

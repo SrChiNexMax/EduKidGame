@@ -10,6 +10,7 @@
     </head>
     <body onclick="Musica()">
         <!--Cabecera-->
+        
         <div class="Cabezal">
             <a href="index.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="botonInicio">
@@ -29,6 +30,11 @@
                 <img class="abejaCJI" src="Recursos/img/abejaT.png" alt="Abeja"/>
             </div>
             <div class="circulo"></div>
+            
+            <div id="contadorEjercicios">
+                <p>Ejercicios completados: <span id="contadorNumero">0</span>/<span id="totalEjercicios">6</span></p>
+            </div>
+            
         </div>
         <!--Fin de Cabecera-->
 

@@ -361,3 +361,27 @@ a:visited{
     width: 400px;
     z-index: 9999; /* Asegura que esté en la parte superior */
 }
+
+#contadorEjercicios {
+    position: fixed;
+    top: 1.5%;
+    right: 3%;
+    font-family: 'Bukhari';
+    font-size: 1.5rem;
+    color: black ;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    padding: 5px 10px;
+    z-index: 999; /* Asegura que esté en la parte superior */
+}
+
+
+#contadorEjercicios p {
+    margin: 0;
+    color: white;
+}
+
+#contadorNumero {
+    margin-right: 5px;
+}

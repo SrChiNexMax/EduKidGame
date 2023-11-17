@@ -29,6 +29,10 @@
                 <img class="abejaCJI" src="Recursos/img/abejaT.png" alt="Abeja"/>
             </div>
             <div class="circulo"></div>
+            
+            <div id="contadorEjercicios">
+                <p>Ejercicios completados: <span id="contadorNumero">0</span>/<span id="totalEjercicios">12</span></p>
+            </div>
         </div>
         <!--Fin de Cabecera-->
 
