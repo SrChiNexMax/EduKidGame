@@ -199,10 +199,20 @@ function mostrarMensajeAnimo() {
     mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
     document.body.appendChild(mensajeAnimo);
 
+    // Agrega la imagen de ánimo
+    var imagenAnimo = document.createElement('img');
+    imagenAnimo.src = 'ruta_de_tu_imagen.jpg';  // Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta real de tu imagen
+    imagenAnimo.alt = 'Mensaje de ánimo';
+    imagenAnimo.className = 'imagen-animo';  // Puedes agregar una clase para estilizar la imagen si es necesario
+    document.body.appendChild(imagenAnimo);
+
     setTimeout(function () {
         document.body.removeChild(mensajeAnimo);
+        document.body.removeChild(imagenAnimo);
     }, 1800);
 }
+
+
 
 function verificarTiempo() {
     if (tiempoExpirado) {

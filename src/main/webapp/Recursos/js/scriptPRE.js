@@ -89,7 +89,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 1) {
+        if (respuestasCorrectas === 3) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -185,7 +185,7 @@ function mostrarDialogoExito() {
 }
 
 function mostrarMensajeAnimo() {
-    if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
+    if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
         // Muestra el mensaje de ánimo solo cuando el contador de respuestas correctas es un múltiplo de 3 y mayor que 0
         var mensajeAnimo = document.createElement('div');
         mensajeAnimo.className = 'dialogo-exito';
