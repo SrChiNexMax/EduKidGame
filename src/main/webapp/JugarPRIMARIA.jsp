@@ -117,7 +117,5 @@
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
         </audio>
-        
-        
     </body>
 </html>

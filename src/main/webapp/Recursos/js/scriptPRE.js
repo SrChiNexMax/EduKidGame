@@ -105,6 +105,8 @@ function evaluarRespuesta() {
             panalS = null;
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
+            mostrarRespuestaCorrecta(problemaMatematico, resultadoEsperado);
+
         }, 1800);
 
         ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
@@ -257,4 +259,69 @@ function verificarTiempo() {
         }
     }
 }
+
+function representarComoManzanas(cantidad) {
+    var imagenesManzana = [];
+
+    for (var i = 0; i < cantidad; i++) {
+        var imgManzana = document.createElement('img');
+        imgManzana.src = 'Recursos/img/manzana.png'; // Reemplaza 'ruta_de_tu_imagen/' con la ruta real
+        imgManzana.alt = 'manzana';
+        imgManzana.className = 'manzana-img'; // Agrega una clase a la imagen
+        imagenesManzana.push(imgManzana);
+    }
+
+    return imagenesManzana;
+}
+
+
+function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
+    var respuestaCorrectaPopup = document.createElement('div');
+    respuestaCorrectaPopup.className = 'dialogo-exito';
+
+
+    // Agregar texto de retroalimentación
+    var textoRetroalimentacion = document.createElement('p');
+    textoRetroalimentacion.textContent = 'Retroalimentación';
+    respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
+    
+    // Representar el problema matemático
+    for (var i = 0; i < problemaMatematico.length; i++) {
+        var caracter = problemaMatematico[i];
+        if (!isNaN(caracter)) {
+            // Si el caracter es un número, usa la función para representar como manzanas
+            var cantidadManzanas = parseInt(caracter);
+            var imagenesManzana = representarComoManzanas(cantidadManzanas);
+
+            // Agrega cada imagen de manzana al popup
+            imagenesManzana.forEach(function (imagenManzana) {
+                respuestaCorrectaPopup.appendChild(imagenManzana);
+            });
+        } else {
+            // Si el caracter no es un número, crea un elemento de texto normal
+            var textoNormal = document.createTextNode(caracter);
+            respuestaCorrectaPopup.appendChild(textoNormal);
+        }
+    }
+
+    // Agrega el signo igual (=)
+    respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
+
+    // Representar la respuesta correcta como manzanas
+    var imagenesRespuesta = representarComoManzanas(respuestaCorrecta);
+
+    // Agrega cada imagen de manzana al popup
+    imagenesRespuesta.forEach(function (imagenManzana) {
+        respuestaCorrectaPopup.appendChild(imagenManzana);
+    });
+
+    document.body.appendChild(respuestaCorrectaPopup);
+
+    // Oculta el mensaje después de 5 segundos
+    setTimeout(function () {
+        document.body.removeChild(respuestaCorrectaPopup);
+    }, 3000);
+}
+
+
 verificarTiempo();
