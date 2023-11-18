@@ -50,6 +50,15 @@ body, html{
     overflow: hidden;
 }
 
+#particles-js{
+    position: absolute;
+    display: none;
+    height: 89vh;
+    top: 11vh;
+    width: 100vw;
+    z-index: 2;
+}
+
 a{
     text-decoration: none;
     color: black;

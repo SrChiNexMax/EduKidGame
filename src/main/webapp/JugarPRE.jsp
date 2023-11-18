@@ -7,10 +7,16 @@
         <link rel="stylesheet" href="Recursos/css/estiloPRE.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/scriptPRE.js"></script>
+        <script src="Recursos/js/particles.min.js"></script>
+
     </head>
     <body onclick="Musica()">
+
+        <div id="particles-js">
+
+        </div>
         <!--Cabecera-->
-        
+
         <div class="Cabezal">
             <a href="index.jsp">
                 <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="botonInicio">
@@ -30,11 +36,11 @@
                 <img class="abejaCJI" src="Recursos/img/abejaT.png" alt="Abeja"/>
             </div>
             <div class="circulo"></div>
-            
+
             <div id="contadorEjercicios">
                 <p>Ejercicios completados: <span id="contadorNumero">0</span>/<span id="totalEjercicios">6</span></p>
             </div>
-            
+
         </div>
         <!--Fin de Cabecera-->
 
@@ -89,10 +95,11 @@
 
                 <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
                 <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
-                
+
                 <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
             </div>
         </div>
+
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.

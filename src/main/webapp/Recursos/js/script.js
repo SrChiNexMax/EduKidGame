@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     iniciarAnimacionBoton();
 });
 
+let tiempoExpirado = false;
+
 function verificarTiempo() {
     if (tiempoExpirado) {
         return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
@@ -61,20 +63,10 @@ function verificarTiempo() {
 
     const tiempoInicio = localStorage.getItem('tiempoInicio');
     const tiempoLimite = localStorage.getItem('tiempoLimite');
-
-    if (tiempoLimite === null || isNaN(tiempoLimite)) {
-        // Si no hay tiempo límite, muestra un mensaje personalizado
-        mostrarTiempoRestante(null);
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        return;
-    }
-
     const tiempoLimiteMs = tiempoLimite * 60 * 1000;
     const tiempoActual = new Date().getTime();
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
     const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
-
-    mostrarTiempoRestante(tiempoRestanteMs);
 
     if (tiempoTranscurrido >= tiempoLimiteMs) {
         // Si se alcanza el tiempo límite, bloquea la aplicación
