@@ -114,19 +114,6 @@ function evaluarRespuesta() {
         setTimeout(mostrarDialogoExito, 5000);
     }
 } else {
-            mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
-        }, 1800);
-
-        ejerciciosCompletados++;
-
-        document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
-
-        if (ejerciciosCompletados === totalEjercicios) {
-            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
-            setTimeout(mostrarDialogoExito, 5000);
-        }
-
-    } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
