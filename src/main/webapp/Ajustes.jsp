@@ -67,12 +67,29 @@
                 Tiempo limitado exitosamente
             </p>
         </div>
-        
+
         <div class="daltonismodiv">
             Filtro Daltonismo
-            <div>Deuteranopía</div>
-            <div>Tritanopía</div>
-            <div>Protanopía</div>
+            <div class="botonesDaltonismo">
+                <div class="btnNormal" onclick="aplicarFiltro('normal')">Sin filtro</div>
+                <div class="btnDeu" onclick="aplicarFiltro('deuteranopia')">Deuteranopía</div>
+                <div class="btnTrita" onclick="aplicarFiltro('tritanopia')">Tritanopía</div>
+                <div class="btnPro" onclick="aplicarFiltro('protanopia')">Protanopía</div>
+            </div>
+        </div>
+        
+        <div class="difdiv">
+            Dificultad
+            <div class="botonesdif">
+                <div class="btnFacil" onclick="aplicarDif('facil')">Facil</div>
+                <div class="btnDificil" onclick="aplicarDif('dificil')">Dificil</div>
+            </div>
+        </div>
+        
+        <div id="mensajeDificultad">
+            <p>
+                Dificultad seleccionada exitosamente
+            </p>
         </div>
 
         <div>

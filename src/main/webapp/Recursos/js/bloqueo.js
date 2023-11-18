@@ -1,3 +1,12 @@
+window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};
 function reproducirBoton() {
     //Funcion para reproducir un sonido con los botones
     var boton = new Audio();
@@ -33,3 +42,12 @@ function verificarContra() {
     }
 }
 
+window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};

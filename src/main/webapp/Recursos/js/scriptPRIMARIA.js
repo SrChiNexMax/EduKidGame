@@ -1,3 +1,12 @@
+window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
 var totalEjercicios = 12; // Actualiza esto con el número total de ejercicios
@@ -29,8 +38,23 @@ function mostrarPopup() {
 }
 
 function generarProblemaMatematico() {
-    let num1 = Math.floor(Math.random() * 10) + 1;
-    let num2 = Math.floor(Math.random() * num1) + 1;
+    let num1, num2;
+    var dif = localStorage.getItem('dificultad');
+    switch (dif) {
+        case 'facil':
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+        case 'dificil':
+            num1 = Math.floor(Math.random() * 12) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+        default:
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+    }
+    
     let operadores = ['+', '-', '*', '/'];
     let operador = operadores[Math.floor(Math.random() * operadores.length)];
 
@@ -164,26 +188,48 @@ function mostrarMensajeAnimo() {
         document.body.removeChild(mensajeAnimo);
     }, 1800);
 }
-function verificarTiempo() {
-    const tiempoActual = new Date().getTime();
-    const tiempoInicio = localStorage.getItem('tiempoInicio');
-    const tiempoLimite = localStorage.getItem('tiempoLimite');
-    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
-    const tiempoTranscurrido = tiempoActual - tiempoInicio;
 
-    if (tiempoLimite === 0 || tiempoLimite === null) {
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-    } else {
-        if (tiempoTranscurrido >= tiempoLimiteMs) {
-            // Si se alcanza el tiempo límite, bloquea la aplicación
-            alert("Tiempo de juego agotado. EduKidGame se bloqueara.");
-            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
-        } else {
-            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
-            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        }
+function verificarTiempo() {
+    if (tiempoExpirado) {
+        return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
     }
 
+    const tiempoInicio = localStorage.getItem('tiempoInicio');
+    const tiempoLimite = localStorage.getItem('tiempoLimite');
+
+    if (tiempoLimite === null || isNaN(tiempoLimite)) {
+        // Si no hay tiempo límite, muestra un mensaje personalizado
+        mostrarTiempoRestante(null);
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        return;
+    }
+
+    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoActual = new Date().getTime();
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+    const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
+
+    mostrarTiempoRestante(tiempoRestanteMs);
+
+    if (tiempoTranscurrido >= tiempoLimiteMs) {
+        // Si se alcanza el tiempo límite, bloquea la aplicación
+        alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
+        tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
+        window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+    } else {
+        // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    }
 }
 
 verificarTiempo();
+
+window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};

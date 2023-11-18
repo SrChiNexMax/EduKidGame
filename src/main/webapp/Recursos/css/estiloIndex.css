@@ -11,6 +11,25 @@
     font-style: normal;
 }
 
+body.normal {
+   filter: none;
+}
+
+/* Filtro para protanopía (rojo-verde) */
+body.protanopia {
+   filter: hue-rotate(12deg) sepia(0.05) brightness(90%);
+}
+
+/* Filtro para deuteranopía (rojo-verde) */
+body.deuteranopia {
+   filter: hue-rotate(2deg) sepia(0.2);
+}
+
+/* Filtro para tritanopía (azul-amarillo) */
+body.tritanopia {
+   filter: hue-rotate(300deg);
+}
+
 body, html{
     margin: 0;
     padding: 0;
