@@ -9,7 +9,13 @@ window.onload = function () {
 };
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
-var totalEjercicios = 12; // Actualiza esto con el número total de ejercicios
+var totalEjercicios = 12; 
+
+var estadoPanales = {
+    panal1: false,
+    panal2: false,
+};
+
 
 var panalS = null;
 
@@ -124,6 +130,11 @@ function evaluarRespuesta() {
 }
 
 function moverAbeja(panal) {
+    // Verificar si el panal ya ha sido seleccionado
+    if (estadoPanales[panal]) {
+        return;
+    }
+
     var abeja = document.querySelector('.abeja');
     var panalSeleccionado = document.querySelector('.' + panal);
 
@@ -134,9 +145,13 @@ function moverAbeja(panal) {
     abeja.style.top = (panalSeleccionado.offsetTop + 20) + 'px';
     abeja.style.left = (panalSeleccionado.offsetLeft + 20) + 'px';
 
+    // Actualizar el estado del panal a seleccionado
+    estadoPanales[panal] = true;
+
     // Muestra el popup después de 1 segundo (ajusta el tiempo según tus necesidades)
     setTimeout(mostrarPopup, 1000);
 }
+
 
 function validarInput(input) {
     input.value = input.value.replace(/[^0-9.,-]/g, ''); // Elimina caracteres no numéricos
@@ -223,13 +238,3 @@ function verificarTiempo() {
 }
 
 verificarTiempo();
-
-window.onload = function () {
-    // Obtener la preferencia del filtro almacenada en localStorage
-    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
-
-    // Si hay una preferencia almacenada, aplicarla
-    if (filtroGuardado) {
-        document.body.className = filtroGuardado;
-    }
-};

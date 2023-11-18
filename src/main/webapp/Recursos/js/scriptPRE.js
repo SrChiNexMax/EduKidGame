@@ -9,7 +9,13 @@ window.onload = function () {
 };
 
 var ejerciciosCompletados = 0;
+var respuestasCorrectas = 0;
 var totalEjercicios = 6;
+
+var estadoPanales = {
+    panal1: false,
+    panal2: false,
+};
 
 
 var panalS = null;
@@ -80,6 +86,14 @@ function evaluarRespuesta() {
         mensajeIntento.style.display = 'none';
         document.getElementById('respuestaInput').value = '';
         document.getElementById('contenedorRespuesta').style.display = 'none';
+
+        respuestasCorrectas++; // Incrementa el contador de respuestas correctas
+
+        if (respuestasCorrectas === 3) {
+            // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
+            setTimeout(mostrarMensajeAnimo, 1800);
+        }
+
         setTimeout(function () {
             var popup = document.getElementById('popup');
             popup.style.display = 'none';
@@ -93,15 +107,13 @@ function evaluarRespuesta() {
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
         }, 1800);
 
-        ejerciciosCompletados++;
+        ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
 
         document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
 
         if (ejerciciosCompletados === totalEjercicios) {
-            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
             setTimeout(mostrarDialogoExito, 5000);
         }
-
     } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
@@ -110,6 +122,11 @@ function evaluarRespuesta() {
 }
 
 function moverAbeja(panal) {
+    // Verificar si el panal ya ha sido seleccionado
+    if (estadoPanales[panal]) {
+        return;
+    }
+
     var abeja = document.querySelector('.abeja');
     var panalSeleccionado = document.querySelector('.' + panal);
 
@@ -120,14 +137,17 @@ function moverAbeja(panal) {
     abeja.style.top = (panalSeleccionado.offsetTop + 20) + 'px';
     abeja.style.left = (panalSeleccionado.offsetLeft + 20) + 'px';
 
+    // Actualizar el estado del panal a seleccionado
+    estadoPanales[panal] = true;
+
     // Muestra el popup después de 1 segundo (ajusta el tiempo según tus necesidades)
     setTimeout(mostrarPopup, 1000);
 }
 
-function validarInput(input) {
-    input.value = input.value.replace(/[^0-9]/g, ''); // Elimina caracteres no numéricos
-}
 
+function validarInput(input) {
+    input.value = input.value.replace(/[^0-9.,-]/g, ''); // Elimina caracteres no numéricos
+}
 
 function mostrarTip() {
     var abejaTip = document.getElementById('abejaTip');
@@ -147,54 +167,86 @@ function mostrarTip() {
 }
 
 function mostrarDialogoExito() {
-
     console.log('Ejercicios completados:', ejerciciosCompletados);
-
 
     var dialogoExito = document.createElement('div');
     dialogoExito.className = 'dialogo-exito';
     dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
     document.body.appendChild(dialogoExito);
 
+    // Reproducir audio de felicitaciones
     var audioFelicitaciones = document.getElementById('audioFelicitaciones');
     audioFelicitaciones.play();
 
+    // Ocultar el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(dialogoExito);
     }, 5000);
 }
 
-function verificarTiempo() {
-    if (tiempoExpirado) {
-        return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
-    }
+function mostrarMensajeAnimo() {
+    if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+        // Muestra el mensaje de ánimo solo cuando el contador de respuestas correctas es un múltiplo de 3 y mayor que 0
+        var mensajeAnimo = document.createElement('div');
+        mensajeAnimo.className = 'dialogo-exito';
+        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+        document.body.appendChild(mensajeAnimo);
 
-    const tiempoInicio = localStorage.getItem('tiempoInicio');
-    const tiempoLimite = localStorage.getItem('tiempoLimite');
-
-    if (tiempoLimite === null || isNaN(tiempoLimite)) {
-        // Si no hay tiempo límite, muestra un mensaje personalizado
-        mostrarTiempoRestante(null);
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        return;
-    }
-
-    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
-    const tiempoActual = new Date().getTime();
-    const tiempoTranscurrido = tiempoActual - tiempoInicio;
-    const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
-
-    mostrarTiempoRestante(tiempoRestanteMs);
-
-    if (tiempoTranscurrido >= tiempoLimiteMs) {
-        // Si se alcanza el tiempo límite, bloquea la aplicación
-        alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
-        tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
-        window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
-    } else {
-        // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        setTimeout(function () {
+            document.body.removeChild(mensajeAnimo);
+        }, 1800);
     }
 }
 
+
+function verificarTiempo() {
+    const tiempoActual = new Date().getTime();
+    const tiempoInicio = localStorage.getItem('tiempoInicio');
+    const tiempoLimite = localStorage.getItem('tiempoLimite');
+    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+
+    if (tiempoLimite === 0 || tiempoLimite === null) {
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    } else {
+        if (tiempoTranscurrido >= tiempoLimiteMs) {
+            // Si se alcanza el tiempo límite, bloquea la aplicación
+            alert("Tiempo de juego agotado. EduKidGame se bloqueara.");
+            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+        } else {
+            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        }
+        if (tiempoExpirado) {
+            return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
+        }
+
+        const tiempoInicio = localStorage.getItem('tiempoInicio');
+        const tiempoLimite = localStorage.getItem('tiempoLimite');
+
+        if (tiempoLimite === null || isNaN(tiempoLimite)) {
+            // Si no hay tiempo límite, muestra un mensaje personalizado
+            mostrarTiempoRestante(null);
+            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+            return;
+        }
+
+        const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+        const tiempoActual = new Date().getTime();
+        const tiempoTranscurrido = tiempoActual - tiempoInicio;
+        const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
+
+        mostrarTiempoRestante(tiempoRestanteMs);
+
+        if (tiempoTranscurrido >= tiempoLimiteMs) {
+            // Si se alcanza el tiempo límite, bloquea la aplicación
+            alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
+            tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
+            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+        } else {
+            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        }
+    }
+}
 verificarTiempo();
