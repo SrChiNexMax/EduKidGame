@@ -107,10 +107,14 @@ function evaluarRespuesta() {
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
         }, 1800);
 
-    if (ejerciciosCompletados === totalEjercicios) {
-        setTimeout(mostrarDialogoExito, 2000);
-    }
-} else {
+        ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
+
+        document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
+
+        if (ejerciciosCompletados === totalEjercicios) {
+            setTimeout(mostrarDialogoExito, 2000);
+        }
+    } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
