@@ -7,8 +7,12 @@
         <link rel="stylesheet" href="Recursos/css/estiloPRIMARIA.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/scriptPRIMARIA.js"></script>
+        <script src="Recursos/js/particles.min.js"></script>
     </head>
     <body onclick="Musica()">
+        <div id="particles-js">
+
+        </div>
         <!--Cabecera-->
         <div class="Cabezal">
             <a href="index.jsp">

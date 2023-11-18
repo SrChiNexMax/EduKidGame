@@ -15,6 +15,10 @@ var totalEjercicios = 6;
 var estadoPanales = {
     panal1: false,
     panal2: false,
+    panal3: false,
+    panal4: false,
+    panal5: false,
+    panal6: false
 };
 
 var panalS = null;
@@ -34,7 +38,6 @@ function Musica() {
     var volumenAlmacenado = localStorage.getItem('volumen');
     musica.volume = volumenAlmacenado;
 }
-
 
 function mostrarPopup() {
     var popup = document.getElementById('popup');
@@ -105,7 +108,7 @@ function evaluarRespuesta() {
             panalS = null;
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
-        }, 1800);
+        }, 1700);
 
         ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
 
@@ -166,6 +169,8 @@ function mostrarTip() {
     }
 }
 
+var jsonUrl = 'Recursos/js/particlesconfig.json';
+
 function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
@@ -174,6 +179,21 @@ function mostrarDialogoExito() {
     dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
     document.body.appendChild(dialogoExito);
 
+    var particulas = document.getElementById('particles-js');
+    particulas.style.display = 'block';
+
+    fetch(jsonUrl)
+            .then(response => response.json())
+            .then(configParticles => {
+                // Llamar a particlesJS con la configuración del JSON
+                particlesJS('particles-js', configParticles);
+
+                // Otras funciones y código de tu script...
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+
     // Reproducir audio de felicitaciones
     var audioFelicitaciones = document.getElementById('audioFelicitaciones');
     audioFelicitaciones.play();
@@ -181,6 +201,7 @@ function mostrarDialogoExito() {
     // Ocultar el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(dialogoExito);
+        particulas.style.display = 'none';
     }, 5000);
 }
 
@@ -205,56 +226,29 @@ function mostrarMensajeAnimo() {
     }
 }
 
-
+let tiempoExpirado = false;
 
 function verificarTiempo() {
-    const tiempoActual = new Date().getTime();
+    if (tiempoExpirado) {
+        return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
+    }
+
     const tiempoInicio = localStorage.getItem('tiempoInicio');
     const tiempoLimite = localStorage.getItem('tiempoLimite');
     const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoActual = new Date().getTime();
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
+    const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
 
-    if (tiempoLimite === 0 || tiempoLimite === null) {
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    if (tiempoTranscurrido >= tiempoLimiteMs) {
+        // Si se alcanza el tiempo límite, bloquea la aplicación
+        alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
+        tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
+        window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
     } else {
-        if (tiempoTranscurrido >= tiempoLimiteMs) {
-            // Si se alcanza el tiempo límite, bloquea la aplicación
-            alert("Tiempo de juego agotado. EduKidGame se bloqueara.");
-            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
-        } else {
-            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
-            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        }
-        if (tiempoExpirado) {
-            return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
-        }
-
-        const tiempoInicio = localStorage.getItem('tiempoInicio');
-        const tiempoLimite = localStorage.getItem('tiempoLimite');
-
-        if (tiempoLimite === null || isNaN(tiempoLimite)) {
-            // Si no hay tiempo límite, muestra un mensaje personalizado
-            mostrarTiempoRestante(null);
-            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-            return;
-        }
-
-        const tiempoLimiteMs = tiempoLimite * 60 * 1000;
-        const tiempoActual = new Date().getTime();
-        const tiempoTranscurrido = tiempoActual - tiempoInicio;
-        const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
-
-        mostrarTiempoRestante(tiempoRestanteMs);
-
-        if (tiempoTranscurrido >= tiempoLimiteMs) {
-            // Si se alcanza el tiempo límite, bloquea la aplicación
-            alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
-            tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
-            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
-        } else {
-            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
-            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        }
+        // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
     }
 }
+
 verificarTiempo();

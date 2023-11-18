@@ -9,7 +9,7 @@ window.onload = function () {
 };
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
-var totalEjercicios = 12; 
+var totalEjercicios = 12;
 
 var estadoPanales = {
     panal1: false,
@@ -60,12 +60,12 @@ function generarProblemaMatematico() {
             num2 = Math.floor(Math.random() * num1) + 1;
             break;
     }
-    
+
     let operadores = ['+', '-', '*', '/'];
     let operador = operadores[Math.floor(Math.random() * operadores.length)];
 
     // Asegurarse de que no haya divisiones por cero
-     if (operador === '/') {
+    if (operador === '/') {
         // Calcula el cociente más cercano que resulte en una división entera
         num1 = num1 * num2;
     }
@@ -92,14 +92,14 @@ function evaluarRespuesta() {
         mensajeIntento.style.display = 'none';
         document.getElementById('respuestaInput').value = '';
         document.getElementById('contenedorRespuesta').style.display = 'none';
-        
+
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
-        
+
         if (respuestasCorrectas % 3 === 0 && respuestasCorrectas <= 9) {
             // Cada 3 respuestas correctas, muestra el mensaje de ánimo
-                setTimeout(mostrarMensajeAnimo, 1800);
+            setTimeout(mostrarMensajeAnimo, 1800);
         }
-        
+
         setTimeout(function () {
             var popup = document.getElementById('popup');
             popup.style.display = 'none';
@@ -112,16 +112,16 @@ function evaluarRespuesta() {
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
         }, 1800);
-        
+
         ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
-        
+
         document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
 
         if (ejerciciosCompletados === totalEjercicios) {
             // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
             setTimeout(mostrarDialogoExito, 2000);
         }
-        
+
     } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
@@ -174,6 +174,8 @@ function mostrarTip() {
     }
 }
 
+var jsonUrl = 'Recursos/js/particlesconfig.json';
+
 function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
@@ -182,6 +184,21 @@ function mostrarDialogoExito() {
     dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
     document.body.appendChild(dialogoExito);
 
+    var particulas = document.getElementById('particles-js');
+    particulas.style.display = 'block';
+
+    fetch(jsonUrl)
+            .then(response => response.json())
+            .then(configParticles => {
+                // Llamar a particlesJS con la configuración del JSON
+                particlesJS('particles-js', configParticles);
+
+                // Otras funciones y código de tu script...
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+
     // Reproducir audio de felicitaciones
     var audioFelicitaciones = document.getElementById('audioFelicitaciones');
     audioFelicitaciones.play();
@@ -189,29 +206,30 @@ function mostrarDialogoExito() {
     // Ocultar el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(dialogoExito);
+        particulas.style.display = 'none';
     }, 5000);
 }
 
 function mostrarMensajeAnimo() {
     // Muestra el mensaje de ánimo
     var mensajeAnimo = document.createElement('div');
-        mensajeAnimo.className = 'dialogo-exito';
-        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
-        document.body.appendChild(mensajeAnimo);
+    mensajeAnimo.className = 'dialogo-exito';
+    mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+    document.body.appendChild(mensajeAnimo);
 
-        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
-        var abejaAnimo = document.createElement('div');
-        abejaAnimo.className = 'abeja-animo';
-        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
-        document.body.appendChild(abejaAnimo);
+    // Muestra la abeja al mismo tiempo que el mensaje de ánimo
+    var abejaAnimo = document.createElement('div');
+    abejaAnimo.className = 'abeja-animo';
+    abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+    document.body.appendChild(abejaAnimo);
 
-        setTimeout(function () {
-            document.body.removeChild(mensajeAnimo);
-            document.body.removeChild(abejaAnimo);
-        }, 1800);
+    setTimeout(function () {
+        document.body.removeChild(mensajeAnimo);
+        document.body.removeChild(abejaAnimo);
+    }, 1800);
 }
 
-
+let tiempoExpirado = false;
 
 function verificarTiempo() {
     if (tiempoExpirado) {
@@ -220,20 +238,10 @@ function verificarTiempo() {
 
     const tiempoInicio = localStorage.getItem('tiempoInicio');
     const tiempoLimite = localStorage.getItem('tiempoLimite');
-
-    if (tiempoLimite === null || isNaN(tiempoLimite)) {
-        // Si no hay tiempo límite, muestra un mensaje personalizado
-        mostrarTiempoRestante(null);
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        return;
-    }
-
     const tiempoLimiteMs = tiempoLimite * 60 * 1000;
     const tiempoActual = new Date().getTime();
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
     const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
-
-    mostrarTiempoRestante(tiempoRestanteMs);
 
     if (tiempoTranscurrido >= tiempoLimiteMs) {
         // Si se alcanza el tiempo límite, bloquea la aplicación
