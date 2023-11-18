@@ -272,8 +272,6 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     var respuestaCorrectaPopup = document.createElement('div');
     respuestaCorrectaPopup.className = 'dialogo-exito';
 
-
-    // Agregar texto de retroalimentación
     var textoRetroalimentacion = document.createElement('p');
     textoRetroalimentacion.textContent = 'Retroalimentación';
     respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
@@ -282,7 +280,6 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     for (var i = 0; i < problemaMatematico.length; i++) {
         var caracter = problemaMatematico[i];
         if (!isNaN(caracter)) {
-            // Si el caracter es un número, usa la función para representar como manzanas
             var cantidadManzanas = parseInt(caracter);
             var imagenesManzana = representarComoManzanas(cantidadManzanas);
 
@@ -291,19 +288,15 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
                 respuestaCorrectaPopup.appendChild(imagenManzana);
             });
         } else {
-            // Si el caracter no es un número, crea un elemento de texto normal
             var textoNormal = document.createTextNode(caracter);
             respuestaCorrectaPopup.appendChild(textoNormal);
         }
     }
 
-    // Agrega el signo igual (=)
     respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
 
-    // Representar la respuesta correcta como manzanas
     var imagenesRespuesta = representarComoManzanas(respuestaCorrecta);
 
-    // Agrega cada imagen de manzana al popup
     imagenesRespuesta.forEach(function (imagenManzana) {
         respuestaCorrectaPopup.appendChild(imagenManzana);
     });
