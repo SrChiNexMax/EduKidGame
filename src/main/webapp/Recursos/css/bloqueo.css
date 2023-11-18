@@ -122,32 +122,31 @@ a:visited{
     filter: drop-shadow(-5px 0px 10px rgba(0, 0, 0, 0.8));
 }
 
-/*Botones*/
-
-.btnContra{
+.btnDesbloquear{
     display: flex;
     font-family: 'Horta';
     position: absolute;
-    font-size: 3rem;
-    top: 30%;
-    left: 20%;
+    font-size: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #f2c561;
     border-radius: 10px;
     width: 450px;
-    height: 60px;
+    height: 100px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 1;
 }
 
-.btnContra:hover{
+.btnDesbloquear:hover{
     background: linear-gradient(to bottom, #E9AB46, #DD8509);
     border: 10px solid #F0C30C;
 }
 
-#popupContra {
+#popupDesbloquear{
     font-family: 'Horta';
     color: white;
     font-size: 2.2rem;
@@ -196,97 +195,10 @@ a:visited{
     justify-content: center;
 }
 
-#mensajeContra{
-    font-family: 'Horta';
-    color: white;
-    font-size: 2.2rem;
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(to bottom, #F8730E, #DD860A);
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 650px;
-    z-index: 4;
-}
-
 #inputContra{
     all: unset;
 }
 
-/*Tiempo*/
-
-.tiempodiv{
-    display: flex;
-    font-family: 'Horta';
-    position: absolute;
-    font-size: 2rem;
-    top: 50%;
-    left: 20%;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    width: 450px;
-    height: 100px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.tiempodiv2{
-    margin-top: 10px;
-    display: flex;
-    font-size: 1.3rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.btnGuardar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Horta';
-    font-size: 1.3rem;
-    background: linear-gradient(to bottom, #e08e16, #ecb44a);
-    border: 5px solid #F2C560;
-    border-radius: 10px;
-    width: 80px;
-    height: 25px;
-    left: 0.8%;
-}
-
-.btnGuardar:hover{
-    background: linear-gradient(to bottom, #E9AB46, #DD8509);
-    border: 5px solid #F0C30C;
-}
-
-#tiempoInput{
-    all: unset;
-}
-
-#mensajeTiempo{
-    font-family: 'Horta';
-    color: white;
-    font-size: 2.2rem;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(to bottom, #F8730E, #DD860A);
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 650px;
-    z-index: 4;
-}
 /*Decoracion de fondo*/
 
 .florImg{
@@ -341,128 +253,4 @@ a:visited{
     position: fixed;
     top: 235px;
     right: -290px;
-}
-
-/*Input de Volumen*/
-
-#controlVolumen{
-    position: absolute;
-    top: 41.5%;
-    left: 20%;
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    
-    font-family: 'Horta';
-    font-size: 1.6rem;
-    
-    background: #fff;
-    height: 2rem;
-    width: 450px;
-    border-radius: 5rem;
-    box-shadow: 1px 5px 5px rgba(black, 0.3);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-input[type="range"] {
-	-webkit-appearance: none;
-	width: 80%;
-	height: 100%;
-	background: transparent;
-
-	&:focus {
-		outline: none;
-	}
-
-	&::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		height: 16px;
-		width: 16px;
-		border-radius: 50%;
-		background: #ffffff;
-		margin-top: -5px;
-		box-shadow: 1px 1px 2px rgba(#000, 0.5);
-
-		cursor: pointer;
-		
-	}
-
-	&::-webkit-slider-runnable-track {
-		width: 60%;
-		height: 9px;
-		background: #F4C460;
-		border-radius: 3rem;
-
-		transition: all 0.5s;
-		cursor: pointer;
-	}
-
-	&:hover::-webkit-slider-runnable-track {
-		background: #DD860A;
-	}
-
-
-	&::-ms-track {
-		width: 60%;
-		cursor: pointer;
-		height: 9px;
-
-		transition: all 0.5s;
-		/* Hides the slider so custom styles can be added */
-		background: transparent;
-		border-color: transparent;
-		color: transparent;
-	}
-
-	&::-ms-thumb {
-		height: 16px;
-		width: 16px;
-		border-radius: 50%;
-		background: #ffffff;
-		margin-top: -5px;
-		box-shadow: 1px 1px 2px rgba(#000, 0.5);
-
-		cursor: pointer;
-	}
-
-	&::-ms-fill-lower {
-		background: #bdbdbd;
-		border-radius: 3rem;
-	}
-	&:focus::-ms-fill-lower {
-		background: #ff6e40;
-	}
-	&::-ms-fill-upper {
-		background: #bdbdbd;
-		border-radius: 3rem;
-	}
-	&:focus::-ms-fill-upper {
-		background: #ff6e40;
-	}
-
-	&::-moz-range-thumb {
-		height: 16px;
-		width: 16px;
-		border-radius: 50%;
-		background: #ffffff;
-		margin-top: -5px;
-		box-shadow: 1px 1px 2px rgba(#000, 0.5);
-
-		cursor: pointer;
-	}
-
-	&::-moz-range-track {
-		width: 60%;
-		height: 9px;
-		background: #bdbdbd;
-		border-radius: 3rem;
-
-		transition: all 0.5s;
-		cursor: pointer;
-	}
-	&:hover::-moz-range-track {
-		background: #ff6e40;
-	}
 }

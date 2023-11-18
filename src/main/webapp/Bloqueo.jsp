@@ -4,20 +4,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EduKidGame</title>
-        <link rel="stylesheet" href="Recursos/css/ajustes.css">
+        <link rel="stylesheet" href="Recursos/css/bloqueo.css">
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
-        <script src="Recursos/js/ajustes.js"></script>
+        <script src="Recursos/js/bloqueo.js"></script>
     </head>
-    <body onclick="Musica()" onmouseover="verificarTiempo()">
+    <body onclick="Musica()">
         <!--Cabecera-->
         <div class="Cabezal">
-            <a href="index.jsp">
-                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="botonInicio">
-                    Inicio
-                </div>
-            </a>
-
-            <a onclick='reproducirBoton()' onmouseover='reproducirBoton()' href="index.jsp">
+            <a onclick='reproducirBoton()' onmouseover='reproducirBoton()'>
                 <div class="titulo1">
                     EduKid
                 </div>
@@ -32,41 +26,18 @@
         </div>
         <!--Fin de Cabecera-->
 
-        <div onclick='reproducirBoton(), mostrarPopup()' onmouseover='reproducirBoton()' class="btnContra">
-            Contraseña
+        <div class="btnDesbloquear" onclick="mostrarPopup()">
+            Desbloquear
         </div>
-
-        <div id="popupContra">
-            <div id="contraDinamico">
-                <!-- El contenido del problema matemático se llenará dinámicamente-->
+        
+        <div id="popupDesbloquear">
+            <p class="pPop">Coloca la contraseña parental:</p>
+            <div id="contenedorContra">
+                <input type="password" id="inputContra" placeholder="Pon tu contraseña">
+                <div class="btnInput" onclick='verificarContra(), reproducirBoton()'>Verificar</div>
             </div>
         </div>
-
-        <div id="mensajeContra">
-            <p>
-                Contraseña guardada exitosamente
-            </p>
-        </div>
-
-        <div id="controlVolumen">
-            <label for="volumen">Volumen:</label>
-            <input type="range" id="volumen" min="0" max="1" step="0.025" onchange="ajustarVolumen()">
-        </div>
-
-        <div class="tiempodiv">
-            Tiempo disponible para jugar:
-            <div class="tiempodiv2">
-                <input type="text" id="tiempoInput" placeholder="Tiempo disponible (minutos)" oninput="validarInput(this)">
-                <div class="btnGuardar" onclick="guardarTiempo()">Guardar</div>
-            </div>
-        </div>
-
-        <div id="mensajeTiempo">
-            <p>
-                Tiempo limitado exitosamente
-            </p>
-        </div>
-
+        
         <div>
             <div class="florF1">
                 <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
@@ -91,7 +62,5 @@
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
         </audio>
-        <script>
-            volumen.value = localStorage.getItem('volumen') || 0.4;</script>
     </body>
 </html>
