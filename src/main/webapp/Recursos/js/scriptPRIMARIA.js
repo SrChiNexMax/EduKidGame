@@ -95,7 +95,7 @@ function evaluarRespuesta() {
         
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
         
-        if (respuestasCorrectas % 3 === 0) {
+        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas <= 9) {
             // Cada 3 respuestas correctas, muestra el mensaje de ánimo
                 setTimeout(mostrarMensajeAnimo, 1800);
         }
