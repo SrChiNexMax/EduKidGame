@@ -8,7 +8,7 @@
         <link rel="icon" type="image/svg+xml" href="Recursos/img/icon.svg">
         <script src="Recursos/js/ajustes.js"></script>
     </head>
-    <body onclick="Musica()" onmouseover="verificarTiempo()">
+    <body class="normal" onclick="Musica()" onmouseover="verificarTiempo()">
         <!--Cabecera-->
         <div class="Cabezal">
             <a href="index.jsp">
@@ -60,11 +60,19 @@
                 <div class="btnGuardar" onclick="guardarTiempo()">Guardar</div>
             </div>
         </div>
+        <div id="contadorTiempo"></div>
 
         <div id="mensajeTiempo">
             <p>
                 Tiempo limitado exitosamente
             </p>
+        </div>
+        
+        <div class="daltonismodiv">
+            Filtro Daltonismo
+            <div>Deuteranopía</div>
+            <div>Tritanopía</div>
+            <div>Protanopía</div>
         </div>
 
         <div>

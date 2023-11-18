@@ -120,29 +120,57 @@ function guardarTiempo() {
     }, 1600);
 }
 
-function verificarTiempo() {
-    const tiempoActual = new Date().getTime();
-    const tiempoInicio = localStorage.getItem('tiempoInicio');
-    const tiempoLimite = localStorage.getItem('tiempoLimite');
-    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
-    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+let tiempoExpirado = false;
 
-    if (tiempoLimite === 0 || tiempoLimite === null) {
-        alert("XD");
-        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-    } else {
-        if (tiempoTranscurrido >= tiempoLimiteMs) {
-            // Si se alcanza el tiempo límite, bloquea la aplicación
-            alert("Tiempo de juego agotado. EduKidGame se bloqueara.");
-            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
-        } else {
-            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
-            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
-        }
+function verificarTiempo() {
+    if (tiempoExpirado) {
+        return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
     }
 
+    const tiempoInicio = localStorage.getItem('tiempoInicio');
+    const tiempoLimite = localStorage.getItem('tiempoLimite');
+
+    if (tiempoLimite === null || isNaN(tiempoLimite)) {
+        // Si no hay tiempo límite, muestra un mensaje personalizado
+        mostrarTiempoRestante(null);
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        return;
+    }
+
+    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoActual = new Date().getTime();
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+    const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
+
+    mostrarTiempoRestante(tiempoRestanteMs);
+
+    if (tiempoTranscurrido >= tiempoLimiteMs) {
+        // Si se alcanza el tiempo límite, bloquea la aplicación
+        alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
+        tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
+        window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+    } else {
+        // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    }
+}
+
+function mostrarTiempoRestante(tiempoRestanteMs) {
+    if (tiempoRestanteMs === null) {
+        // Si no hay tiempo restante, muestra un mensaje personalizado
+        document.getElementById('contadorTiempo').innerText = 'Sin límite de tiempo';
+    } else {
+        // Convierte el tiempo restante de milisegundos a minutos y segundos
+        const minutos = Math.floor(tiempoRestanteMs / 60000);
+        const segundos = Math.floor((tiempoRestanteMs % 60000) / 1000);
+
+        // Formatea los minutos y segundos como cadena y actualiza el contenido del elemento HTML
+        const tiempoRestante = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+        document.getElementById('contadorTiempo').innerText = `Tiempo restante: ${tiempoRestante}`;
+    }
 }
 
 verificarTiempo();
+
 
 
