@@ -1,3 +1,12 @@
+window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};
 function reproducirBoton() {
     //Funcion para reproducir un sonido con los botones
     var boton = new Audio();
@@ -109,15 +118,21 @@ function validarInput(input) {
 }
 
 function guardarTiempo() {
-    var tiempoLimite = document.getElementById('tiempoInput').value;
-    const tiempoInicio = new Date().getTime();
-    localStorage.setItem('tiempoLimite', tiempoLimite);
-    localStorage.setItem('tiempoInicio', tiempoInicio);
-    var mensaje = document.getElementById('mensajeTiempo');
-    mensaje.style.display = 'block';
-    setTimeout(function () {
-        mensaje.style.display = 'none'; // Oculta el mensaje
-    }, 1600);
+    var contraAlmacenada = localStorage.getItem('contra');
+    var contraIngresada = prompt("Ingresa la contraseña parental");
+    if (contraAlmacenada === contraIngresada) {
+        var tiempoLimite = document.getElementById('tiempoInput').value;
+        const tiempoInicio = new Date().getTime();
+        localStorage.setItem('tiempoLimite', tiempoLimite);
+        localStorage.setItem('tiempoInicio', tiempoInicio);
+        var mensaje = document.getElementById('mensajeTiempo');
+        mensaje.style.display = 'block';
+        setTimeout(function () {
+            mensaje.style.display = 'none'; // Oculta el mensaje
+        }, 1600);
+    } else {
+        alert('Contraseña incorrecta.');
+    }
 }
 
 let tiempoExpirado = false;
@@ -172,5 +187,17 @@ function mostrarTiempoRestante(tiempoRestanteMs) {
 
 verificarTiempo();
 
+function aplicarFiltro(tipoDaltonismo) {
+    document.body.className = tipoDaltonismo;
 
+    localStorage.setItem('filtroDaltonismo', tipoDaltonismo);
+}
 
+function aplicarDif(dificultad) {
+    localStorage.setItem('dificultad', dificultad);
+    var mensaje = document.getElementById('mensajeDificultad');
+    mensaje.style.display = 'block';
+    setTimeout(function () {
+        mensaje.style.display = 'none'; // Oculta el mensaje
+    }, 1600);
+}

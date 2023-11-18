@@ -29,17 +29,17 @@ body.normal {
 
 /* Filtro para protanopía (rojo-verde) */
 body.protanopia {
-   filter: grayscale(100%) contrast(100%) brightness(100%) hue-rotate(120deg);
+   filter: hue-rotate(12deg) sepia(0.05) brightness(90%);
 }
 
 /* Filtro para deuteranopía (rojo-verde) */
 body.deuteranopia {
-   filter: grayscale(100%) contrast(100%) brightness(100%) hue-rotate(90deg);
+   filter: hue-rotate(2deg) sepia(0.2);
 }
 
 /* Filtro para tritanopía (azul-amarillo) */
 body.tritanopia {
-   filter: grayscale(100%) contrast(100%) brightness(100%) hue-rotate(30deg);
+   filter: hue-rotate(300deg) sepia(0.3);
 }
 
 body, html{
@@ -323,17 +323,166 @@ a:visited{
     position: absolute;
     font-size: 2rem;
     top: 30%;
-    left: 60%;
+    left: 55%;
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #f2c561;
     border-radius: 10px;
-    width: 450px;
-    height: 200px;
+    width: 600px;
+    height: 100px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     z-index: 1;
+}
+
+.botonesDaltonismo{
+    display: flex;
+}
+
+.btnNormal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.btnDeu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.btnDeu:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 5px solid #F0C30C;
+}
+
+.btnPro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+}
+
+.btnPro:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 5px solid #F0C30C;
+}
+
+.btnTrita{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.btnTrita:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 5px solid #F0C30C;
+}
+
+/*Dificultad*/
+
+.difdiv{
+    display: flex;
+    font-family: 'Horta';
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 55%;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    width: 600px;
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.botonesdif{
+    display: flex;
+}
+
+.btnFacil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.btnDificil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Horta';
+    font-size: 1.6rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 5px solid #F2C560;
+    border-radius: 10px;
+    width: 130px;
+    height: 40px;
+}
+
+.btnDeu:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 5px solid #F0C30C;
+}
+
+#mensajeDificultad{
+    font-family: 'Horta';
+    color: white;
+    font-size: 2.2rem;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #F8730E, #DD860A);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
+    z-index: 4;
 }
 
 /*Decoracion de fondo*/

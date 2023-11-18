@@ -1,3 +1,12 @@
+    window.onload = function () {
+    // Obtener la preferencia del filtro almacenada en localStorage
+    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
+
+    // Si hay una preferencia almacenada, aplicarla
+    if (filtroGuardado) {
+        document.body.className = filtroGuardado;
+    }
+};
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
 var totalEjercicios = 6; 
@@ -36,8 +45,22 @@ function mostrarPopup() {
 }
 
 function generarProblemaMatematico() {
-    let num1 = Math.floor(Math.random() * 10) + 1;
-    let num2 = Math.floor(Math.random() * num1) + 1;
+    let num1, num2;
+    var dif = localStorage.getItem('dificultad');
+    switch (dif) {
+        case 'facil':
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+        case 'dificil':
+            num1 = Math.floor(Math.random() * 20) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+        default:
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * num1) + 1;
+            break;
+    }
     let operador = Math.random() < 0.5 ? '+' : '-';
 
     return `${num1} ${operador} ${num2}`;
@@ -91,6 +114,19 @@ function evaluarRespuesta() {
         setTimeout(mostrarDialogoExito, 5000);
     }
 } else {
+            mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
+        }, 1800);
+
+        ejerciciosCompletados++;
+
+        document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
+
+        if (ejerciciosCompletados === totalEjercicios) {
+            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
+            setTimeout(mostrarDialogoExito, 5000);
+        }
+
+    } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
@@ -193,8 +229,37 @@ function verificarTiempo() {
             // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
             setTimeout(verificarTiempo, 1000); // Verifica cada segundo
         }
+    if (tiempoExpirado) {
+        return;  // Si el tiempo ya ha expirado, no realizar más verificaciones
     }
 
+    const tiempoInicio = localStorage.getItem('tiempoInicio');
+    const tiempoLimite = localStorage.getItem('tiempoLimite');
+
+    if (tiempoLimite === null || isNaN(tiempoLimite)) {
+        // Si no hay tiempo límite, muestra un mensaje personalizado
+        mostrarTiempoRestante(null);
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        return;
+    }
+
+    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoActual = new Date().getTime();
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+    const tiempoRestanteMs = Math.max(tiempoLimiteMs - tiempoTranscurrido, 0);
+
+    mostrarTiempoRestante(tiempoRestanteMs);
+
+    if (tiempoTranscurrido >= tiempoLimiteMs) {
+        // Si se alcanza el tiempo límite, bloquea la aplicación
+        alert("Tiempo de juego agotado. EduKidGame se bloqueará.");
+        tiempoExpirado = true;  // Establecer la bandera de tiempo expirado
+        window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+    } else {
+        // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    }
 }
 
 verificarTiempo();
+}
