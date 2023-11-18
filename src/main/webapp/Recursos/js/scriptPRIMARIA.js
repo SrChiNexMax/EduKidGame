@@ -119,7 +119,7 @@ function evaluarRespuesta() {
 
         if (ejerciciosCompletados === totalEjercicios) {
             // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
-            setTimeout(mostrarDialogoExito, 5000);
+            setTimeout(mostrarDialogoExito, 2000);
         }
         
     } else {

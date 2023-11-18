@@ -16,7 +16,6 @@ var estadoPanales = {
     panal2: false,
 };
 
-
 var panalS = null;
 
 function reproducirBoton() {
@@ -26,6 +25,7 @@ function reproducirBoton() {
     boton.volume = 0.3;
     boton.play();
 }
+
 function Musica() {
     //Funcion para reproducir la musica de la pagina
     var musica = document.getElementById("musicaFondo");
@@ -111,7 +111,7 @@ function evaluarRespuesta() {
     document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
 
     if (ejerciciosCompletados === totalEjercicios) {
-        setTimeout(mostrarDialogoExito, 5000);
+        setTimeout(mostrarDialogoExito, 2000);
     }
 } else {
         document.getElementById('respuestaInput').value = '';
