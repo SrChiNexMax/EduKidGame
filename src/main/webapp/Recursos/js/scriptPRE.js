@@ -1,5 +1,11 @@
 var ejerciciosCompletados = 0;
-var totalEjercicios = 6;
+var respuestasCorrectas = 0;
+var totalEjercicios = 6; 
+
+var estadoPanales = {
+    panal1: false,
+    panal2: false,
+};
 
 
 var panalS = null;
@@ -52,33 +58,39 @@ function evaluarRespuesta() {
     // Muestra un mensaje en el popup según si la respuesta es correcta o incorrecta
     let mensajeFelicitaciones = document.getElementById('mensajeFelicitaciones');
     if (respuestaCorrecta) {
-        mensajeFelicitaciones.style.display = 'block';
-        mensajeIntento.style.display = 'none';
-        document.getElementById('respuestaInput').value = '';
-        document.getElementById('contenedorRespuesta').style.display = 'none';
-        setTimeout(function () {
-            var popup = document.getElementById('popup');
-            popup.style.display = 'none';
+    mensajeFelicitaciones.style.display = 'block';
+    mensajeIntento.style.display = 'none';
+    document.getElementById('respuestaInput').value = '';
+    document.getElementById('contenedorRespuesta').style.display = 'none';
 
-            if (panalS) {
-                panalS.style.filter = 'grayscale(0%)';
-            }
+    respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-            panalS = null;
+    if (respuestasCorrectas === 3) {
+        // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
+        setTimeout(mostrarMensajeAnimo, 1800);
+    }
 
-            mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
-        }, 1800);
-        
-         ejerciciosCompletados++;
-         
-        document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
- 
-         if (ejerciciosCompletados === totalEjercicios) {
-            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
-            setTimeout(mostrarDialogoExito, 5000);
+    setTimeout(function () {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'none';
+
+        if (panalS) {
+            panalS.style.filter = 'grayscale(0%)';
         }
-        
-    } else {
+
+        panalS = null;
+
+        mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
+    }, 1800);
+
+    ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
+
+    document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
+
+    if (ejerciciosCompletados === totalEjercicios) {
+        setTimeout(mostrarDialogoExito, 5000);
+    }
+} else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
@@ -86,6 +98,11 @@ function evaluarRespuesta() {
 }
 
 function moverAbeja(panal) {
+    // Verificar si el panal ya ha sido seleccionado
+    if (estadoPanales[panal]) {
+        return;
+    }
+
     var abeja = document.querySelector('.abeja');
     var panalSeleccionado = document.querySelector('.' + panal);
 
@@ -96,14 +113,17 @@ function moverAbeja(panal) {
     abeja.style.top = (panalSeleccionado.offsetTop + 20) + 'px';
     abeja.style.left = (panalSeleccionado.offsetLeft + 20) + 'px';
 
+    // Actualizar el estado del panal a seleccionado
+    estadoPanales[panal] = true;
+
     // Muestra el popup después de 1 segundo (ajusta el tiempo según tus necesidades)
     setTimeout(mostrarPopup, 1000);
 }
 
-function validarInput(input) {
-    input.value = input.value.replace(/[^0-9]/g, ''); // Elimina caracteres no numéricos
-}
 
+function validarInput(input) {
+    input.value = input.value.replace(/[^0-9.,-]/g, ''); // Elimina caracteres no numéricos
+}
 
 function mostrarTip() {
     var abejaTip = document.getElementById('abejaTip');
@@ -123,22 +143,37 @@ function mostrarTip() {
 }
 
 function mostrarDialogoExito() {
-    
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
-    
     var dialogoExito = document.createElement('div');
     dialogoExito.className = 'dialogo-exito';
     dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
     document.body.appendChild(dialogoExito);
-    
+
+    // Reproducir audio de felicitaciones
     var audioFelicitaciones = document.getElementById('audioFelicitaciones');
     audioFelicitaciones.play();
-    
+
+    // Ocultar el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(dialogoExito);
     }, 5000);
 }
+
+function mostrarMensajeAnimo() {
+    if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+        // Muestra el mensaje de ánimo solo cuando el contador de respuestas correctas es un múltiplo de 3 y mayor que 0
+        var mensajeAnimo = document.createElement('div');
+        mensajeAnimo.className = 'dialogo-exito';
+        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+        document.body.appendChild(mensajeAnimo);
+
+        setTimeout(function () {
+            document.body.removeChild(mensajeAnimo);
+        }, 1800);
+    }
+}
+
 
 function verificarTiempo() {
     const tiempoActual = new Date().getTime();
@@ -148,7 +183,6 @@ function verificarTiempo() {
     const tiempoTranscurrido = tiempoActual - tiempoInicio;
 
     if (tiempoLimite === 0 || tiempoLimite === null) {
-        alert("XD");
         setTimeout(verificarTiempo, 1000); // Verifica cada segundo
     } else {
         if (tiempoTranscurrido >= tiempoLimiteMs) {
