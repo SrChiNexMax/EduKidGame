@@ -195,21 +195,20 @@ function mostrarDialogoExito() {
 function mostrarMensajeAnimo() {
     // Muestra el mensaje de ánimo
     var mensajeAnimo = document.createElement('div');
-    mensajeAnimo.className = 'dialogo-exito';
-    mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
-    document.body.appendChild(mensajeAnimo);
+        mensajeAnimo.className = 'dialogo-exito';
+        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+        document.body.appendChild(mensajeAnimo);
 
-    // Agrega la imagen de ánimo
-    var imagenAnimo = document.createElement('img');
-    imagenAnimo.src = 'ruta_de_tu_imagen.jpg';  // Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta real de tu imagen
-    imagenAnimo.alt = 'Mensaje de ánimo';
-    imagenAnimo.className = 'imagen-animo';  // Puedes agregar una clase para estilizar la imagen si es necesario
-    document.body.appendChild(imagenAnimo);
+        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
+        var abejaAnimo = document.createElement('div');
+        abejaAnimo.className = 'abeja-animo';
+        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+        document.body.appendChild(abejaAnimo);
 
-    setTimeout(function () {
-        document.body.removeChild(mensajeAnimo);
-        document.body.removeChild(imagenAnimo);
-    }, 1800);
+        setTimeout(function () {
+            document.body.removeChild(mensajeAnimo);
+            document.body.removeChild(abejaAnimo);
+        }, 1800);
 }
 
 
