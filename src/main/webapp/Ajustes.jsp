@@ -30,6 +30,11 @@
             </div>
             <div class="circulo"></div>
 
+            <div class="manual" onclick='reproducirBoton(), mostrarManual()' onmouseover='reproducirBoton()'>
+                <img src="Recursos/img/manual.png" class="manualimg"/>
+                <p>Manual</p>
+            </div>
+            
             <div class="soporte" onclick='reproducirBoton(), mostrarSoporte()' onmouseover='reproducirBoton()'>
                 <img src="Recursos/img/pregunta.png" class="soporteimg"/>
                 <p>Ayuda</p>
@@ -116,6 +121,10 @@
             </form>
         </div>
 
+        <div class="imagenDiv">
+            <<img src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>>
+        </div>
+        
         <div>
             <div class="florF1">
                 <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>

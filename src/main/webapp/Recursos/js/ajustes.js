@@ -206,3 +206,8 @@ function mostrarSoporte(){
     var popup = document.getElementById('formDiv');
     popup.style.display = 'block';
 }
+
+function mostrarManual(){
+    var popup = document.getElementById('imagenDiv');
+    popup.style.display = 'block';
+}

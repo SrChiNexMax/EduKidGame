@@ -166,6 +166,31 @@ a:visited{
     margin: 0;
 }
 
+.manual{
+    margin: 0;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.manualimg{
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.manual p {
+    padding: 0;
+    margin: 0;
+}
+
 #formDiv{
     display: none;
     font-family: 'Horta';
@@ -575,6 +600,22 @@ a:visited{
     width: 650px;
     z-index: 4;
 }
+
+.imagenDiv{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom, #F8730E, #DD860A);
+    border: 10px solid #f2c561;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
+    z-index: 4;
+}
+
 
 /*Decoracion de fondo*/
 
