@@ -89,7 +89,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 3) {
+        if (respuestasCorrectas === 1) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -185,18 +185,26 @@ function mostrarDialogoExito() {
 }
 
 function mostrarMensajeAnimo() {
-    if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+    if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
         // Muestra el mensaje de ánimo solo cuando el contador de respuestas correctas es un múltiplo de 3 y mayor que 0
         var mensajeAnimo = document.createElement('div');
         mensajeAnimo.className = 'dialogo-exito';
         mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
         document.body.appendChild(mensajeAnimo);
 
+        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
+        var abejaAnimo = document.createElement('div');
+        abejaAnimo.className = 'abeja-animo';
+        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+        document.body.appendChild(abejaAnimo);
+
         setTimeout(function () {
             document.body.removeChild(mensajeAnimo);
+            document.body.removeChild(abejaAnimo);
         }, 1800);
     }
 }
+
 
 
 function verificarTiempo() {

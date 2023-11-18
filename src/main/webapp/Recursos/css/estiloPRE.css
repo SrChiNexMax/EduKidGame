@@ -366,3 +366,28 @@ a:visited{
 #contadorNumero {
     margin-right: 5px;
 }
+
+.abeja-animo {
+    position: absolute;
+    top: 55%;  
+    left: 50%;
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5)); /* Agrega el efecto de sombra */
+    z-index: 9999;
+    animation: flotar 3s ease-in-out infinite; /* Agrega la animación de flotar */
+    transform-origin: center bottom; /* Define el punto de transformación en la base de la abeja */
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0); /* Inicio y final: no hay movimiento vertical */
+    }
+    50% {
+        transform: translateY(-20px); /* En el medio del tiempo, mueve la abeja hacia arriba */
+    }
+}
+
+.abeja-animo-img {
+    width: 400px; 
+    height: 360px; 
+
+}
