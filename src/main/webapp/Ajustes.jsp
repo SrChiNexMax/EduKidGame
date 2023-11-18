@@ -29,6 +29,11 @@
                 <img class="abejaCJI" src="Recursos/img/abejaT.png" alt="Abeja"/>
             </div>
             <div class="circulo"></div>
+
+            <div class="soporte" onclick='reproducirBoton(), mostrarSoporte()' onmouseover='reproducirBoton()'>
+                <img src="Recursos/img/pregunta.png" class="soporteimg"/>
+                <p>Ayuda</p>
+            </div>
         </div>
         <!--Fin de Cabecera-->
 
@@ -77,7 +82,7 @@
                 <div class="btnPro" onclick="aplicarFiltro('protanopia')">Protanopía</div>
             </div>
         </div>
-        
+
         <div class="difdiv">
             Dificultad
             <div class="botonesdif">
@@ -85,7 +90,7 @@
                 <div class="btnDificil" onclick="aplicarDif('dificil')">Dificil</div>
             </div>
         </div>
-        
+
         <div id="mensajeDificultad">
             <p>
                 Dificultad seleccionada exitosamente

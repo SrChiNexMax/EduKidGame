@@ -7,6 +7,7 @@ window.onload = function () {
         document.body.className = filtroGuardado;
     }
 };
+
 var ejerciciosCompletados = 0;
 var totalEjercicios = 6;
 
@@ -197,13 +198,3 @@ function verificarTiempo() {
 }
 
 verificarTiempo();
-
-window.onload = function () {
-    // Obtener la preferencia del filtro almacenada en localStorage
-    var filtroGuardado = localStorage.getItem('filtroDaltonismo');
-
-    // Si hay una preferencia almacenada, aplicarla
-    if (filtroGuardado) {
-        document.body.className = filtroGuardado;
-    }
-};
