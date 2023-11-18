@@ -113,7 +113,7 @@
             </label>
             <div class="l1">
                 <textarea name="Queja/Consulta" id="mensajeForm"></textarea>
-                <button onclick="ce" class="btnEnviar" type="submit">Enviar</button>
+                <button onclick="reproducirBoton()" class="btnEnviar" type="submit">Enviar</button>
             </div>
             <input type="hidden" name="_next" value="http://localhost:8080/EduKidGame/Ajustes.jsp">
             <input type="hidden" name="_captcha" value="false">
@@ -121,8 +121,8 @@
             </form>
         </div>
 
-        <div class="imagenDiv">
-            <<img src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>>
+        <div id="imagenDiv">
+            <img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
         </div>
         
         <div>

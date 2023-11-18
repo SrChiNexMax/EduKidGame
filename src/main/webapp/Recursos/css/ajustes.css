@@ -601,7 +601,7 @@ a:visited{
     z-index: 4;
 }
 
-.imagenDiv{
+#imagenDiv{
     display: none;
     position: absolute;
     top: 50%;
@@ -612,8 +612,14 @@ a:visited{
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 650px;
+    height: auto;
+    width: auto;
     z-index: 4;
+}
+
+.indexManual{
+    height: auto;
+    width: auto;
 }
 
 
