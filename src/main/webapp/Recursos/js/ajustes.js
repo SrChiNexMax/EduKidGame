@@ -201,3 +201,8 @@ function aplicarDif(dificultad) {
         mensaje.style.display = 'none'; // Oculta el mensaje
     }, 1600);
 }
+
+function mostrarSoporte(){
+    var popup = document.getElementById('formDiv');
+    popup.style.display = 'block';
+}

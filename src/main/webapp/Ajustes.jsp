@@ -97,6 +97,25 @@
             </p>
         </div>
 
+        <div id="formDiv">
+            <form action="https://formsubmit.co/c1bfdbd2307d7e76ef309af743e9537f" method="POST" class="formQueja"/>
+            <label>
+                Tu Correo:
+                <input type="email" name="Correo:" id="formEmail" placeholder="Tu e-mail">
+            </label>
+            <label>
+                Queja/Consulta:
+            </label>
+            <div class="l1">
+                <textarea name="Queja/Consulta" id="mensajeForm"></textarea>
+                <button onclick="ce" class="btnEnviar" type="submit">Enviar</button>
+            </div>
+            <input type="hidden" name="_next" value="http://localhost:8080/EduKidGame/Ajustes.jsp">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            </form>
+        </div>
+
         <div>
             <div class="florF1">
                 <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
