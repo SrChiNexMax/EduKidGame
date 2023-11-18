@@ -137,3 +137,28 @@ function mostrarDialogoExito() {
         document.body.removeChild(dialogoExito);
     }, 5000);
 }
+
+function verificarTiempo() {
+    const tiempoActual = new Date().getTime();
+    const tiempoInicio = localStorage.getItem('tiempoInicio');
+    const tiempoLimite = localStorage.getItem('tiempoLimite');
+    const tiempoLimiteMs = tiempoLimite * 60 * 1000;
+    const tiempoTranscurrido = tiempoActual - tiempoInicio;
+
+    if (tiempoLimite === 0 || tiempoLimite === null) {
+        alert("XD");
+        setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+    } else {
+        if (tiempoTranscurrido >= tiempoLimiteMs) {
+            // Si se alcanza el tiempo límite, bloquea la aplicación
+            alert("Tiempo de juego agotado. EduKidGame se bloqueara.");
+            window.location.href = 'Bloqueo.jsp'; // Cambia esto según tus necesidades
+        } else {
+            // Si no se ha alcanzado el límite, sigue verificando después de un intervalo de tiempo
+            setTimeout(verificarTiempo, 1000); // Verifica cada segundo
+        }
+    }
+
+}
+
+verificarTiempo();
