@@ -9,28 +9,6 @@
         <script src="Recursos/js/script.js"></script>
     </head>
     <body onclick="Musica()">
-        <div>
-            <div class="titulo1">
-                EduKid
-            </div>
-            <div class="titulo2">
-                Game
-            </div>
-
-            <a href="Dialogo.jsp">
-                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton1">
-                    Jugar
-                </div>
-            </a>
-
-
-            <a href="ComoJugar.jsp">
-                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton2">
-                    Como Jugar
-                </div>
-            </a>
-        </div>
-
         <div id="popupdif" class="popupdif">
             <div class="botondif" onmouseover='reproducirBoton()' onclick="redirigir('pre')">
                 PREESCOLAR
@@ -79,7 +57,27 @@
             <img class="ajustes" src="Recursos/img/ajustes.png">
             <p>Ajustes</p>
         </div>
-        
+        <div>
+            <div class="titulo1">
+                EduKid
+            </div>
+            <div class="titulo2">
+                Game
+            </div>
+
+            <a href="Dialogo.jsp">
+                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton1">
+                    Jugar
+                </div>
+            </a>
+
+
+            <a href="ComoJugar.jsp">
+                <div onclick='reproducirBoton()' onmouseover='reproducirBoton()' class="boton2">
+                    Como Jugar
+                </div>
+            </a>
+        </div>
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.

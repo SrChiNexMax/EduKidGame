@@ -219,6 +219,9 @@ a:visited{
     left: 5%;
     z-index: 1;
 }
+.abejaReinaImg{
+    height: 280px;
+}
 
 .florF1{
     position: fixed;
@@ -241,7 +244,7 @@ a:visited{
     top: -170px;
     left: -50px;
     transform: rotate(170deg);
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .florF4{
@@ -249,7 +252,7 @@ a:visited{
     top: -170px;
     left: 0px;
     transform: rotate(130deg);
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .panalF1{

@@ -9,33 +9,6 @@
         <script src="Recursos/js/script.js"></script>
     </head>
     <body onclick="Musica()">
-
-    <div class="dialogo-container">
-        <div  id="dialog" class="dialogo">
-            Oh no!!! El camino hacia la colmena ha desaparecido debido a un hechizo malvado. 
-            
-            Acompaña a las abejitas en una aventura a través de problemas matemáticos para hallar el camino a casa donde Cada flor revelará un nuevo tramo 
-
-            <br><br>¿Podrás completarlo todo? <br><br>¡El Valle de las Abejitas cuenta contigo!
-        </div>
-        <!--Elementos de fondo-->
-        
-        <div class="botonesNivel">
-            <a href="JugarPRE.jsp">
-                <img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja">
-            </a> 
-            <a href="JugarPRE.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
-                Pre escolar
-            </a>
-            <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
-                Escolar
-            </a>
-            <a href="JugarPRIMARIA.jsp">
-                <img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja">
-            </a>
-        </div>
-    </div>
-        
         <div>
             <div class="abejaReina">
                 <img class="abejaReinaImg" src="Recursos/img/abejaReina.png" alt="Abeja"/>
@@ -65,6 +38,33 @@
                 <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
             </div>
         </div>
+        <div class="dialogo-container">
+            <div  id="dialog" class="dialogo">
+                Oh no!!! El camino hacia la colmena ha desaparecido debido a un hechizo malvado. 
+
+                Acompaña a las abejitas en una aventura a través de problemas matemáticos para hallar el camino a casa donde Cada flor revelará un nuevo tramo 
+
+                <br><br>¿Podrás completarlo todo? <br><br>¡El Valle de las Abejitas cuenta contigo!
+            </div>
+            <!--Elementos de fondo-->
+
+            <div class="botonesNivel">
+                <a href="JugarPRE.jsp">
+                    <img class="abejaImg" src="Recursos/img/abejaPRE.png" alt="Abeja">
+                </a> 
+                <a href="JugarPRE.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
+                    Pre escolar
+                </a>
+                <a href="JugarPRIMARIA.jsp" onclick='reproducirBoton()' onmouseover='reproducirBoton()' onmouseout="revertirBoton()" class="botonNivel">
+                    Escolar
+                </a>
+                <a href="JugarPRIMARIA.jsp">
+                    <img class="abejaImg" src="Recursos/img/abejaPRIMARIA.png" alt="Abeja">
+                </a>
+            </div>
+        </div>
+        
+        
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.

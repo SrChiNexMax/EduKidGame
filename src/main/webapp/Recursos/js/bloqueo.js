@@ -25,7 +25,7 @@ function mostrarPopup() {
 }
 
 function verificarContra() {
-    var contraAlmacenada = localStorage.getItem('contra');
+    var contraAlmacenada = "admin";//localStorage.getItem('contra');
     var contraIngresada = document.getElementById('inputContra').value;
     var popup = document.getElementById('popupDesbloquear');
     if (contraIngresada === contraAlmacenada) {
