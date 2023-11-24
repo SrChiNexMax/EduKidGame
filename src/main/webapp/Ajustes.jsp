@@ -41,8 +41,29 @@
             </div>
         </div>
         <!--Fin de Cabecera-->
+        
+        <div>
+            <div class="florF1">
+                <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
+            </div>
+            <div class="florF2">
+                <img class="florImg2" src="Recursos/img/flor.png" alt="Girasol"/>
+            </div>
+            <div class="panalF1">
+                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+            </div>
+            <div class="panalF2">
+                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+            </div>
+            <div class="panalF3">
+                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+            </div>
+            <div class="panalF4">
+                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
+            </div>
+        </div>
 
-        <div onclick='reproducirBoton(), mostrarPopup()' onmouseover='reproducirBoton()' class="btnContra">
+        <div onclick='reproducirBoton(), mostrarPopup()' onmouseover='reproducirBoton()' class="btnContra row col-mx-12">
             Contraseña
         </div>
 
@@ -79,7 +100,7 @@
         </div>
 
         <div class="daltonismodiv">
-            Filtro Daltonismo
+            <label style="text-align: center;">Filtro Daltonismo</label>
             <div class="botonesDaltonismo">
                 <div class="btnNormal" onclick="aplicarFiltro('normal')">Sin filtro</div>
                 <div class="btnDeu" onclick="aplicarFiltro('deuteranopia')">Deuteranopía</div>
@@ -125,26 +146,7 @@
             <img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
         </div>
         
-        <div>
-            <div class="florF1">
-                <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>
-            </div>
-            <div class="florF2">
-                <img class="florImg2" src="Recursos/img/flor.png" alt="Girasol"/>
-            </div>
-            <div class="panalF1">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
-            </div>
-            <div class="panalF2">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
-            </div>
-            <div class="panalF3">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
-            </div>
-            <div class="panalF4">
-                <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
-            </div>
-        </div>
+        
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
