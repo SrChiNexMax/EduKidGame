@@ -299,41 +299,22 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     respuestaCorrectaPopup.className = 'dialogo-exito';
 
     var textoRetroalimentacion = document.createElement('p');
-    textoRetroalimentacion.textContent = 'Recuerda lo siguiente';
+    textoRetroalimentacion.textContent = 'Recuerda lo siguiente:';
     respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
-    
-    // Representar el problema matemático
-    for (var i = 0; i < problemaMatematico.length; i++) {
-        var caracter = problemaMatematico[i];
-        if (!isNaN(caracter)) {
-            var cantidadManzanas = parseInt(caracter);
-            var imagenesManzana = representarComoManzanas(cantidadManzanas);
 
-            // Agrega cada imagen de manzana al popup
-            imagenesManzana.forEach(function (imagenManzana) {
-                respuestaCorrectaPopup.appendChild(imagenManzana);
-            });
-        } else {
-            var textoNormal = document.createTextNode(caracter);
-            respuestaCorrectaPopup.appendChild(textoNormal);
-        }
-    }
+    var textoProblema = document.createTextNode(problemaMatematico);
+    respuestaCorrectaPopup.appendChild(textoProblema);
 
     respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
 
-    var imagenesRespuesta = representarComoManzanas(respuestaCorrecta);
-
-    imagenesRespuesta.forEach(function (imagenManzana) {
-        respuestaCorrectaPopup.appendChild(imagenManzana);
-    });
+    var textoRespuesta = document.createTextNode(respuestaCorrecta);
+    respuestaCorrectaPopup.appendChild(textoRespuesta);
 
     document.body.appendChild(respuestaCorrectaPopup);
 
-    // Oculta el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(respuestaCorrectaPopup);
     }, 6000);
 }
-
 
 verificarTiempo();

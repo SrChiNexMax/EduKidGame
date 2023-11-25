@@ -406,3 +406,9 @@ a:visited{
         height: auto; /* Para mantener la proporción original */
         margin-right: 2px; /* Ajusta el margen según tus preferencias */
     }
+    
+    .fila-manzanas {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;  /* Ajusta el margen entre filas según tus preferencias */
+}

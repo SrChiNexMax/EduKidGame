@@ -277,14 +277,27 @@ function verificarTiempo() {
 
 function representarComoManzanas(cantidad) {
     var imagenesManzana = [];
+    var manzanasPorFila = 5;
 
     for (var i = 0; i < cantidad; i++) {
+        // Crear imagen de manzana
         var imgManzana = document.createElement('img');
-        imgManzana.src = 'Recursos/img/manzana.png'; 
+        imgManzana.src = 'Recursos/img/manzana.png';
         imgManzana.alt = 'manzana';
-        imgManzana.className = 'manzana-img'; 
-        imagenesManzana.push(imgManzana);
+        imgManzana.className = 'manzana-img';
+
+        // Agregar imagen a la fila actual
+        if (i % manzanasPorFila === 0) {
+            // Crear nueva fila
+            var fila = document.createElement('div');
+            fila.className = 'fila-manzanas';
+            imagenesManzana.push(fila);
+        }
+
+        // Agregar la imagen a la fila actual
+        imagenesManzana[imagenesManzana.length - 1].appendChild(imgManzana);
     }
+
     return imagenesManzana;
 }
 
