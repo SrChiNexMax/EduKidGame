@@ -95,8 +95,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas <= 9) {
-            // Cada 3 respuestas correctas, muestra el mensaje de ánimo
+        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas <=9) {
             setTimeout(mostrarMensajeAnimo, 1800);
         }
 
@@ -111,6 +110,8 @@ function evaluarRespuesta() {
             panalS = null;
 
             mensajeFelicitaciones.style.display = 'none'; // Oculta el mensaje de felicitaciones
+            mostrarRespuestaCorrecta(problemaMatematico, resultadoEsperado);
+
         }, 1800);
 
         ejerciciosCompletados++; // Incrementa el contador de ejercicios completados
@@ -118,10 +119,8 @@ function evaluarRespuesta() {
         document.getElementById('contadorNumero').innerText = ejerciciosCompletados;
 
         if (ejerciciosCompletados === totalEjercicios) {
-            // Todos los ejercicios se han completado, muestra el cuadro de diálogo de éxito
             setTimeout(mostrarDialogoExito, 2000);
         }
-
     } else {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
@@ -179,55 +178,66 @@ var jsonUrl = 'Recursos/js/particlesconfig.json';
 function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
-    var dialogoExito = document.createElement('div');
-    dialogoExito.className = 'dialogo-exito';
-    dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
-    document.body.appendChild(dialogoExito);
+    // Verifica si el contador de ejercicios completados ha llegado a 12
+    if (ejerciciosCompletados === 12) {
+        // Espera 6 segundos antes de mostrar el diálogo de éxito
+        setTimeout(function () {
+            var dialogoExito = document.createElement('div');
+            dialogoExito.className = 'dialogo-exito';
+            dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
+            document.body.appendChild(dialogoExito);
 
-    var particulas = document.getElementById('particles-js');
-    particulas.style.display = 'block';
+            var particulas = document.getElementById('particles-js');
+            particulas.style.display = 'block';
 
-    fetch(jsonUrl)
-            .then(response => response.json())
-            .then(configParticles => {
-                // Llamar a particlesJS con la configuración del JSON
-                particlesJS('particles-js', configParticles);
+            fetch(jsonUrl)
+                    .then(response => response.json())
+                    .then(configParticles => {
+                        // Llamar a particlesJS con la configuración del JSON
+                        particlesJS('particles-js', configParticles);
 
-                // Otras funciones y código de tu script...
-            })
-            .catch(error => {
-                console.error('Error al cargar el archivo JSON:', error);
-            });
+                        // Otras funciones y código de tu script...
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el archivo JSON:', error);
+                    });
 
-    // Reproducir audio de felicitaciones
-    var audioFelicitaciones = document.getElementById('audioFelicitaciones');
-    audioFelicitaciones.play();
+            // Reproducir audio de felicitaciones
+            var audioFelicitaciones = document.getElementById('audioFelicitaciones');
+            audioFelicitaciones.play();
 
-    // Ocultar el mensaje después de 5 segundos
-    setTimeout(function () {
-        document.body.removeChild(dialogoExito);
-        particulas.style.display = 'none';
-    }, 5000);
+            // Ocultar el mensaje después de 5 segundos
+            setTimeout(function () {
+                document.body.removeChild(dialogoExito);
+                particulas.style.display = 'none';
+            }, 5000);
+        }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
+    }
 }
 
 function mostrarMensajeAnimo() {
-    // Muestra el mensaje de ánimo
-    var mensajeAnimo = document.createElement('div');
-    mensajeAnimo.className = 'dialogo-exito';
-    mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
-    document.body.appendChild(mensajeAnimo);
-
-    // Muestra la abeja al mismo tiempo que el mensaje de ánimo
-    var abejaAnimo = document.createElement('div');
-    abejaAnimo.className = 'abeja-animo';
-    abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
-    document.body.appendChild(abejaAnimo);
-
+    // Espera 6 segundos antes de mostrar el mensaje de ánimo
     setTimeout(function () {
-        document.body.removeChild(mensajeAnimo);
-        document.body.removeChild(abejaAnimo);
-    }, 1800);
+        // Muestra el mensaje de ánimo
+        var mensajeAnimo = document.createElement('div');
+        mensajeAnimo.className = 'dialogo-exito';
+        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+        document.body.appendChild(mensajeAnimo);
+
+        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
+        var abejaAnimo = document.createElement('div');
+        abejaAnimo.className = 'abeja-animo';
+        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+        document.body.appendChild(abejaAnimo);
+
+        // Espera 6 segundos antes de eliminar el mensaje
+        setTimeout(function () {
+            document.body.removeChild(mensajeAnimo);
+            document.body.removeChild(abejaAnimo);
+        }, 1800);
+    }, 6000); // Espera 6 segundos antes de mostrar el mensaje
 }
+
 
 let tiempoExpirado = false;
 
@@ -253,5 +263,61 @@ function verificarTiempo() {
         setTimeout(verificarTiempo, 1000); // Verifica cada segundo
     }
 }
+
+function representarComoManzanas(cantidad) {
+    var imagenesManzana = [];
+
+    for (var i = 0; i < cantidad; i++) {
+        var imgManzana = document.createElement('img');
+        imgManzana.src = 'Recursos/img/manzana.png'; 
+        imgManzana.alt = 'manzana';
+        imgManzana.className = 'manzana-img'; 
+        imagenesManzana.push(imgManzana);
+    }
+    return imagenesManzana;
+}
+
+
+function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
+    var respuestaCorrectaPopup = document.createElement('div');
+    respuestaCorrectaPopup.className = 'dialogo-exito';
+
+    var textoRetroalimentacion = document.createElement('p');
+    textoRetroalimentacion.textContent = 'Retroalimentación';
+    respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
+    
+    // Representar el problema matemático
+    for (var i = 0; i < problemaMatematico.length; i++) {
+        var caracter = problemaMatematico[i];
+        if (!isNaN(caracter)) {
+            var cantidadManzanas = parseInt(caracter);
+            var imagenesManzana = representarComoManzanas(cantidadManzanas);
+
+            // Agrega cada imagen de manzana al popup
+            imagenesManzana.forEach(function (imagenManzana) {
+                respuestaCorrectaPopup.appendChild(imagenManzana);
+            });
+        } else {
+            var textoNormal = document.createTextNode(caracter);
+            respuestaCorrectaPopup.appendChild(textoNormal);
+        }
+    }
+
+    respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
+
+    var imagenesRespuesta = representarComoManzanas(respuestaCorrecta);
+
+    imagenesRespuesta.forEach(function (imagenManzana) {
+        respuestaCorrectaPopup.appendChild(imagenManzana);
+    });
+
+    document.body.appendChild(respuestaCorrectaPopup);
+
+    // Oculta el mensaje después de 5 segundos
+    setTimeout(function () {
+        document.body.removeChild(respuestaCorrectaPopup);
+    }, 6000);
+}
+
 
 verificarTiempo();
