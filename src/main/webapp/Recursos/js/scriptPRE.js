@@ -11,6 +11,8 @@ window.onload = function () {
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
 var totalEjercicios = 6;
+var respuestasIncorrectas = 0;
+var maxRespuestasIncorrectas = 3;
 
 var estadoPanales = {
     panal1: false,
@@ -123,6 +125,15 @@ function evaluarRespuesta() {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
+
+        // Incrementa el contador de respuestas incorrectas
+        respuestasIncorrectas++;
+
+        // Si se alcanza el límite de respuestas incorrectas, mostrar la retroalimentación
+        if (respuestasIncorrectas === maxRespuestasIncorrectas) {
+            mostrarRespuestaCorrecta(problemaMatematico, resultadoEsperado);
+            respuestasIncorrectas = 0;  // Reinicia el contador después de mostrar la retroalimentación
+        }
     }
 }
 
@@ -269,12 +280,11 @@ function representarComoManzanas(cantidad) {
 
     for (var i = 0; i < cantidad; i++) {
         var imgManzana = document.createElement('img');
-        imgManzana.src = 'Recursos/img/manzana.png'; // Reemplaza 'ruta_de_tu_imagen/' con la ruta real
+        imgManzana.src = 'Recursos/img/manzana.png'; 
         imgManzana.alt = 'manzana';
-        imgManzana.className = 'manzana-img'; // Agrega una clase a la imagen
+        imgManzana.className = 'manzana-img'; 
         imagenesManzana.push(imgManzana);
     }
-
     return imagenesManzana;
 }
 
@@ -284,7 +294,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     respuestaCorrectaPopup.className = 'dialogo-exito';
 
     var textoRetroalimentacion = document.createElement('p');
-    textoRetroalimentacion.textContent = 'Retroalimentación';
+    textoRetroalimentacion.textContent = 'No olvides lo siguiente:';
     respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
     
     // Representar el problema matemático
