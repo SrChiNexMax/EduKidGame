@@ -305,7 +305,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     var textoProblema = document.createTextNode(problemaMatematico);
     respuestaCorrectaPopup.appendChild(textoProblema);
 
-    respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
+    respuestaCorrectaPopup.appendChild(document.createTextNode(" = 🍎"));
 
     var textoRespuesta = document.createTextNode(respuestaCorrecta);
     respuestaCorrectaPopup.appendChild(textoRespuesta);
