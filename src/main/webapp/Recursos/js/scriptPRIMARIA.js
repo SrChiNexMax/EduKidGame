@@ -10,6 +10,10 @@ window.onload = function () {
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
 var totalEjercicios = 12;
+var respuestasIncorrectas = 0;
+var maxRespuestasIncorrectas = 3;
+
+
 
 var estadoPanales = {
     panal1: false,
@@ -125,6 +129,15 @@ function evaluarRespuesta() {
         document.getElementById('respuestaInput').value = '';
         mensajeFelicitaciones.style.display = 'none';
         mensajeIntento.style.display = 'block';
+
+        // Incrementa el contador de respuestas incorrectas
+        respuestasIncorrectas++;
+
+        // Si se alcanza el límite de respuestas incorrectas, mostrar la retroalimentación
+        if (respuestasIncorrectas === maxRespuestasIncorrectas) {
+            mostrarRespuestaCorrecta(problemaMatematico, resultadoEsperado);
+            respuestasIncorrectas = 0;  // Reinicia el contador después de mostrar la retroalimentación
+        }
     }
 }
 
@@ -178,7 +191,7 @@ var jsonUrl = 'Recursos/js/particlesconfig.json';
 function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
-    // Verifica si el contador de ejercicios completados ha llegado a 12
+    // Verifica si el contador de ejercicios completados ha llegado a 
     if (ejerciciosCompletados === 12) {
         // Espera 6 segundos antes de mostrar el diálogo de éxito
         setTimeout(function () {
