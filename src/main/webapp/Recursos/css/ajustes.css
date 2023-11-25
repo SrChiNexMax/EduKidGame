@@ -601,7 +601,7 @@ a:visited{
     z-index: 4;
 }
 
-#imagenDiv{
+#imgDivContenedor{
     display: none;
     position: absolute;
     top: 50%;
@@ -610,7 +610,6 @@ a:visited{
     background: linear-gradient(to bottom, #F8730E, #DD860A);
     border: 10px solid #f2c561;
     border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 80vh;
     width: 80vw;
@@ -618,6 +617,25 @@ a:visited{
     overflow: hidden;
 }
 
+.sliderImagen {
+    display: flex;
+    width: 1300%;
+    height: 75vw;
+    margin-left: -100%;
+}
+
+.slidersection{
+    width: 100%;
+    height: 100%
+}
+
+.imgS{
+    display: block;
+    height: auto;
+    width: 75vw;
+    margin: auto;
+    margin-top: 1.5%;
+}
 .sliderButton {
     position: absolute;
     top: 50%;
@@ -626,8 +644,13 @@ a:visited{
     height: 30px;
     background-color: #333;
     color: #fff;
-    border: none;
+    border-radius: 50%;
     cursor: pointer;
+}
+
+.sliderButton:hover{
+    background-color: #ffff;
+    color: black;
 }
 
 #prevButton {
@@ -636,28 +659,6 @@ a:visited{
 
 #nextButton {
     right: 0;
-}
-
-#imageList {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.sliderImage {
-    width: 300px; /* Ajusta el ancho según tus necesidades */
-    flex: 0 0 auto;
-}
-
-.indexManual{
-    background-repeat: no-repeat;
-    flex: 0 0 auto;
-    width: 75vw;
-}
-.indexManualx{
-    filter: grayscale(100%);
-    background-repeat: no-repeat;
-    flex: 0 0 auto;
-    width: 75vw;
 }
 
 /*Decoracion de fondo*/
@@ -836,6 +837,6 @@ input[type="range"] {
         cursor: pointer;
     }
     &:hover::-moz-range-track {
-        background: #ff6e40;    
+        background: #ff6e40;
     }
 }
