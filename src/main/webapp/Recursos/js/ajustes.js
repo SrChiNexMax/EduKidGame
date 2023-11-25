@@ -202,12 +202,32 @@ function aplicarDif(dificultad) {
     }, 1600);
 }
 
-function mostrarSoporte(){
+function mostrarSoporte() {
     var popup = document.getElementById('formDiv');
     popup.style.display = 'block';
 }
 
-function mostrarManual(){
+function mostrarManual() {
     var popup = document.getElementById('imagenDiv');
     popup.style.display = 'block';
+    showSlide(currentIndex);
+
+}
+var currentIndex = 0;
+var totalSlides = document.querySelectorAll('.sliderImage').length;
+
+function showSlide(index) {
+    // Calcular el desplazamiento necesario para mostrar la imagen deseada
+    var offset = -index * 75 + 'vw';
+    document.getElementById('imageList').style.transform = 'translateX(' + offset + ')';
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
 }

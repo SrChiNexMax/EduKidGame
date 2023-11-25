@@ -34,7 +34,7 @@
                 <img src="Recursos/img/manual.png" class="manualimg"/>
                 <p>Manual</p>
             </div>
-            
+
             <div class="soporte" onclick='reproducirBoton(), mostrarSoporte()' onmouseover='reproducirBoton()'>
                 <img src="Recursos/img/pregunta.png" class="soporteimg"/>
                 <p>Ayuda</p>
@@ -121,10 +121,21 @@
             </form>
         </div>
 
+
         <div id="imagenDiv">
-            <img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
+            <ul id="imageList">
+                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
+                <li class="sliderImage"><img class="indexManual" src="Recursos/img/xd.png" alt="Imagen de Manual de la pagina Index"/></li>
+                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
+                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
+                <!-- Agrega más imágenes según sea necesario -->
+            </ul>
+
+            <!-- Botones de navegación -->
+            <button class="sliderButton" id="prevButton" onclick="prevSlide()">◄</button>
+            <button class="sliderButton" id="nextButton" onclick="nextSlide()">►</button>
         </div>
-        
+
         <div>
             <div class="florF1">
                 <img class="florImg" src="Recursos/img/flor.png" alt="Girasol"/>

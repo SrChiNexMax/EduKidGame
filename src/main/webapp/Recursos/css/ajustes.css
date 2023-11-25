@@ -612,16 +612,53 @@ a:visited{
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: auto;
-    width: auto;
+    height: 80vh;
+    width: 80vw;
     z-index: 4;
+    overflow: hidden;
+}
+
+.sliderButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#prevButton {
+    left: 0;
+}
+
+#nextButton {
+    right: 0;
+}
+
+#imageList {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sliderImage {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    flex: 0 0 auto;
 }
 
 .indexManual{
-    height: auto;
-    width: auto;
+    background-repeat: no-repeat;
+    flex: 0 0 auto;
+    width: 75vw;
 }
-
+.indexManualx{
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    flex: 0 0 auto;
+    width: 75vw;
+}
 
 /*Decoracion de fondo*/
 
@@ -799,6 +836,6 @@ input[type="range"] {
         cursor: pointer;
     }
     &:hover::-moz-range-track {
-        background: #ff6e40;
+        background: #ff6e40;    
     }
 }
