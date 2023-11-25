@@ -142,14 +142,14 @@ a:visited{
     color: white;
     text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
     font-size: 12rem;
-    width: 33vw;
+    width: 20vw;
     text-align: center;
 }
 
 /*Segundo Frame de el cuerpo INSTRUCCIONES*/
 
 .cuerpo .f2{
-    width: 33vw;
+    width: 60vw;
 }
 
 /*Check de los parrafos de instruccion*/
@@ -176,9 +176,9 @@ a:visited{
     padding-right: 10px;
     margin-left: 20px;
     width: 460px;
-    height: 100px;
+    height: 85px;
     left: 50%;
-    top: 33%;
+    top: 25%;
     transform: translateX(-50%);
 }
 
@@ -199,14 +199,14 @@ a:visited{
     width: 460px;
     height: 150px;
     left: 50%;
-    top: 53%;
+    top: 42%;
     transform: translateX(-50%);
 }
 
 /*Tercer Frame de el cuerpo BOTONES DE DIFICULTAD*/
 
 .cuerpo .f3{
-    width: 33vw;
+    width: 20vw;
 }
 
 /*Dos botones de dificultad*/
@@ -221,10 +221,10 @@ a:visited{
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #F2C560;
     border-radius: 10px;
-    width: 300px;
+    width: 170px;
     height: 50px;
-    left: 83%;
-    top: 35%;
+    left: 25%;
+    top: 66%;
     transform: translateX(-50%);
 }
 
@@ -243,10 +243,10 @@ a:visited{
     background: linear-gradient(to bottom, #e08e16, #ecb44a);
     border: 10px solid #F2C560;
     border-radius: 10px;
-    width: 300px;
+    width: 165px;
     height: 50px;
-    left: 83%;
-    top: 59%;
+    left: 75%;
+    top: 66%;
     transform: translateX(-50%);
 }
 
@@ -259,24 +259,24 @@ a:visited{
     position: absolute;
     width: 100px;
     height: 110px;
-    right: 15%;
-    top: 23.5%;
+    right: 14%;
+    top: 12%;
 }
 
 .abejaPRIMARIA{
     position: absolute;
     width: 100px;
     height: 110px;
-    right: 15%;
-    top: 47.5%;
+    right: 69%;
+    top: 73.5%;
 }
 
 .sr{
     position: absolute;
     width: 105px;
     height: 100px;
-    right: 5.5%;
-    top: 36%;
+    right: 65%;
+    top: 14%;
 }
 
 .srmd{
@@ -284,18 +284,20 @@ a:visited{
     width: 105px;
     height: 100px;
     right: 5%;
-    top: 60%;
+    top: 74%;
 }
 
 .panalImg{
     width: 600px;
     height: 600px;
+    
 }
 
 .panal1{
     position: absolute;
     bottom: -435px;
     left: -90px;
+/*    z-index: -1;*/
 }
 .panal2{
     position: absolute;

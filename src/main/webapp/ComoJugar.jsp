@@ -34,6 +34,17 @@
         <!--Fin de Cabecera-->
 
         <!--Cuerpo (2 Secciones: Instrucciones y Botones de dificultad)-->
+        
+        <div class="panal1">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
+        <div class="panal2">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
+        <div class="panal3">
+            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
+        </div>
+        
         <div class="cuerpo">
             <div class="f1">
                 <p class='p1'>¿COMO<br>JUGAR?</p>
@@ -64,15 +75,6 @@
                 <img src="Recursos/img/srmd.png" class="srmd">
             </div>
 
-        </div>
-        <div class="panal1">
-            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
-        </div>
-        <div class="panal2">
-            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
-        </div>
-        <div class="panal3">
-            <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal"/>
         </div>
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
