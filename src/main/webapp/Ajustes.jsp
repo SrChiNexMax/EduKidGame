@@ -122,18 +122,52 @@
         </div>
 
 
-        <div id="imagenDiv">
-            <ul id="imageList">
-                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
-                <li class="sliderImage"><img class="indexManual" src="Recursos/img/xd.png" alt="Imagen de Manual de la pagina Index"/></li>
-                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
-                <li class="sliderImage"><img class="indexManual" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/></li>
-                <!-- Agrega más imágenes según sea necesario -->
-            </ul>
+        <div id="imgDivContenedor">
+            <div id="sliderImagen" class="sliderImagen">
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/ManualIndex.jpg" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Ajustes de contraseña.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Ayuda.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Config.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Dificultad_terminada.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/GUIA.png" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Indicador_problema resuelto.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Interfaz_de_juego.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Introduccion.png" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+                <div class="slidersection">
+                    <img class="imgS" src="Recursos/img/Mensaje_apoyo.JPG" alt="Imagen de Manual de la pagina Index"/>
+                </div>
+            </div>
 
             <!-- Botones de navegación -->
-            <button class="sliderButton" id="prevButton" onclick="prevSlide()">◄</button>
-            <button class="sliderButton" id="nextButton" onclick="nextSlide()">►</button>
+            <button class="sliderButton" id="prevButton" onclick="Atras()">◄</button>
+            <button class="sliderButton" id="nextButton" onclick="Siguiente()">►</button>
         </div>
 
         <div>
