@@ -13,7 +13,8 @@ var totalEjercicios = 12;
 var respuestasIncorrectas = 0;
 var maxRespuestasIncorrectas = 3;
 
-
+var n1; 
+var n2;
 
 var estadoPanales = {
     panal1: false,
@@ -73,9 +74,11 @@ function generarProblemaMatematico() {
         // Calcula el cociente más cercano que resulte en una división entera
         num1 = num1 * num2;
     }
-
+    n1 = num1;
+    n2 = num2;
     return `${num1} ${operador} ${num2}`;
 }
+
 
 function evaluarRespuesta() {
     // Obtén la respuesta del usuario desde el input
@@ -296,7 +299,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     respuestaCorrectaPopup.className = 'dialogo-exito';
 
     var textoRetroalimentacion = document.createElement('p');
-    textoRetroalimentacion.textContent = 'Retroalimentación';
+    textoRetroalimentacion.textContent = 'Recuerda lo siguiente';
     respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
     
     // Representar el problema matemático
