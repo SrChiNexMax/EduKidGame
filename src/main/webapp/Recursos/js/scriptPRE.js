@@ -173,60 +173,71 @@ function mostrarTip() {
 
 var jsonUrl = 'Recursos/js/particlesconfig.json';
 
+// ... (código existente)
+
 function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
-    var dialogoExito = document.createElement('div');
-    dialogoExito.className = 'dialogo-exito';
-    dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
-    document.body.appendChild(dialogoExito);
-
-    var particulas = document.getElementById('particles-js');
-    particulas.style.display = 'block';
-
-    fetch(jsonUrl)
-            .then(response => response.json())
-            .then(configParticles => {
-                // Llamar a particlesJS con la configuración del JSON
-                particlesJS('particles-js', configParticles);
-
-                // Otras funciones y código de tu script...
-            })
-            .catch(error => {
-                console.error('Error al cargar el archivo JSON:', error);
-            });
-
-    // Reproducir audio de felicitaciones
-    var audioFelicitaciones = document.getElementById('audioFelicitaciones');
-    audioFelicitaciones.play();
-
-    // Ocultar el mensaje después de 5 segundos
-    setTimeout(function () {
-        document.body.removeChild(dialogoExito);
-        particulas.style.display = 'none';
-    }, 5000);
-}
-
-function mostrarMensajeAnimo() {
-    if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
-        // Muestra el mensaje de ánimo solo cuando el contador de respuestas correctas es un múltiplo de 3 y mayor que 0
-        var mensajeAnimo = document.createElement('div');
-        mensajeAnimo.className = 'dialogo-exito';
-        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
-        document.body.appendChild(mensajeAnimo);
-
-        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
-        var abejaAnimo = document.createElement('div');
-        abejaAnimo.className = 'abeja-animo';
-        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
-        document.body.appendChild(abejaAnimo);
-
+    // Verifica si el contador de ejercicios completados ha llegado a 6
+    if (ejerciciosCompletados === 6) {
+        // Espera 6 segundos antes de mostrar el diálogo de éxito
         setTimeout(function () {
-            document.body.removeChild(mensajeAnimo);
-            document.body.removeChild(abejaAnimo);
-        }, 1800);
+            var dialogoExito = document.createElement('div');
+            dialogoExito.className = 'dialogo-exito';
+            dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
+            document.body.appendChild(dialogoExito);
+
+            var particulas = document.getElementById('particles-js');
+            particulas.style.display = 'block';
+
+            fetch(jsonUrl)
+                    .then(response => response.json())
+                    .then(configParticles => {
+                        // Llamar a particlesJS con la configuración del JSON
+                        particlesJS('particles-js', configParticles);
+
+                        // Otras funciones y código de tu script...
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el archivo JSON:', error);
+                    });
+
+            // Reproducir audio de felicitaciones
+            var audioFelicitaciones = document.getElementById('audioFelicitaciones');
+            audioFelicitaciones.play();
+
+            // Ocultar el mensaje después de 5 segundos
+            setTimeout(function () {
+                document.body.removeChild(dialogoExito);
+                particulas.style.display = 'none';
+            }, 5000);
+        }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
     }
 }
+
+
+
+function mostrarMensajeAnimo() {
+    setTimeout(function () {
+        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+            var mensajeAnimo = document.createElement('div');
+            mensajeAnimo.className = 'dialogo-exito';
+            mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+            document.body.appendChild(mensajeAnimo);
+
+            var abejaAnimo = document.createElement('div');
+            abejaAnimo.className = 'abeja-animo';
+            abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+            document.body.appendChild(abejaAnimo);
+
+            setTimeout(function () {
+                document.body.removeChild(mensajeAnimo);
+                document.body.removeChild(abejaAnimo);
+            }, 1800); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
+        }
+    }, 6000);
+}
+
 
 let tiempoExpirado = false;
 
@@ -306,7 +317,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     // Oculta el mensaje después de 5 segundos
     setTimeout(function () {
         document.body.removeChild(respuestaCorrectaPopup);
-    }, 3000);
+    }, 6000);
 }
 
 
