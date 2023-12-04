@@ -97,8 +97,7 @@
                 <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
 
                 <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
-            </div>
-            
+            </div>        
         </div>
 
         <audio id="musicaFondo" loop>

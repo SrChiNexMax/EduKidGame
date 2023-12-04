@@ -339,7 +339,6 @@ a:visited{
     font-family: 'Gotham';
     color: white;
     font-size: 2rem;
-    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -349,8 +348,31 @@ a:visited{
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 400px;
-    z-index: 3; /* Asegura que esté en la parte superior */
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInOut 0.5s ease-in-out forwards;
 }
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dialogo-exito p {
+    margin: 10px 0;
+}
+
 
 #contadorEjercicios {
     position: fixed;
@@ -375,15 +397,14 @@ a:visited{
 #contadorNumero {
     margin-right: 5px;
 }
-
 .abeja-animo {
     position: absolute;
-    top: 55%;  
+    top: 55%;
     left: 50%;
-    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5)); /* Agrega el efecto de sombra */
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5));
     z-index: 9999;
-    animation: flotar 3s ease-in-out infinite; /* Agrega la animación de flotar */
-    transform-origin: center bottom; /* Define el punto de transformación en la base de la abeja */
+    animation: flotar 3s ease-in-out infinite;
+    transform-origin: center bottom;
 }
 
 @keyframes flotar {
@@ -411,4 +432,12 @@ a:visited{
     display: flex;
     justify-content: center;
     margin-bottom: 5px;  /* Ajusta el margen entre filas según tus preferencias */
+    
+    .fila-manzanas img {
+    width: 30px;
+    height: auto;
+    margin-right: 5px; /* Ajusta el margen según tus preferencias */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 }

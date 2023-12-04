@@ -94,7 +94,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 3) {
+        if (respuestasCorrectas === 1) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -230,7 +230,7 @@ function mostrarDialogoExito() {
 
 function mostrarMensajeAnimo() {
     setTimeout(function () {
-        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+        if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
             var mensajeAnimo = document.createElement('div');
             mensajeAnimo.className = 'dialogo-exito';
             mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
@@ -244,7 +244,7 @@ function mostrarMensajeAnimo() {
             setTimeout(function () {
                 document.body.removeChild(mensajeAnimo);
                 document.body.removeChild(abejaAnimo);
-            }, 1800); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
+            }, 5000); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
         }
     }, 6000);
 }
