@@ -10,7 +10,7 @@ window.onload = function () {
 
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
-var totalEjercicios = 6;
+var totalEjercicios = 1;
 var respuestasIncorrectas = 0;
 var maxRespuestasIncorrectas = 3;
 
@@ -94,7 +94,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 1) {
+        if (respuestasCorrectas === 2) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -221,7 +221,7 @@ function mostrarDialogoExito() {
             setTimeout(function () {
                 document.body.removeChild(dialogoExito);
                 particulas.style.display = 'none';
-            }, 2000);
+            }, 6000);
         }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
     }
 }
@@ -230,7 +230,7 @@ function mostrarDialogoExito() {
 
 function mostrarMensajeAnimo() {
     setTimeout(function () {
-        if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
+        if (respuestasCorrectas % 2 === 0 && respuestasCorrectas > 0) {
             var mensajeAnimo = document.createElement('div');
             mensajeAnimo.className = 'dialogo-animo';
             mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
