@@ -94,7 +94,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 3) {
+        if (respuestasCorrectas === 1) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -190,7 +190,7 @@ function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
     // Verifica si el contador de ejercicios completados ha llegado a 6
-    if (ejerciciosCompletados === 6) {
+    if (ejerciciosCompletados === totalEjercicios) {
         // Espera 6 segundos antes de mostrar el diálogo de éxito
         setTimeout(function () {
             var dialogoExito = document.createElement('div');
@@ -221,7 +221,7 @@ function mostrarDialogoExito() {
             setTimeout(function () {
                 document.body.removeChild(dialogoExito);
                 particulas.style.display = 'none';
-            }, 5000);
+            }, 2000);
         }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
     }
 }
@@ -230,7 +230,7 @@ function mostrarDialogoExito() {
 
 function mostrarMensajeAnimo() {
     setTimeout(function () {
-        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
+        if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
             var mensajeAnimo = document.createElement('div');
             mensajeAnimo.className = 'dialogo-animo';
             mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
@@ -240,10 +240,17 @@ function mostrarMensajeAnimo() {
             abejaAnimo.className = 'abeja-animo';
             abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/AbejaAnimo.png">';
             document.body.appendChild(abejaAnimo);
+            
+            var premio = document.createElement('div');
+            premio.className = 'premio';
+            premio.innerHTML = '<img class="premio-img" src="Recursos/img/medalla.png">';
+            document.body.appendChild(premio);
 
             setTimeout(function () {
                 document.body.removeChild(mensajeAnimo);
                 document.body.removeChild(abejaAnimo);
+                document.body.removeChild(premio);
+
             }, 5000); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
         }
     }, 6000);
