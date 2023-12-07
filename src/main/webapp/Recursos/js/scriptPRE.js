@@ -10,7 +10,7 @@ window.onload = function () {
 
 var ejerciciosCompletados = 0;
 var respuestasCorrectas = 0;
-var totalEjercicios = 1;
+var totalEjercicios = 6;
 var respuestasIncorrectas = 0;
 var maxRespuestasIncorrectas = 3;
 
@@ -94,7 +94,7 @@ function evaluarRespuesta() {
 
         respuestasCorrectas++; // Incrementa el contador de respuestas correctas
 
-        if (respuestasCorrectas === 2) {
+        if (respuestasCorrectas === 3) {
             // Solo muestra el mensaje de ánimo cuando el contador de respuestas correctas llega a 3
             setTimeout(mostrarMensajeAnimo, 1800);
         }
@@ -230,7 +230,7 @@ function mostrarDialogoExito() {
 
 function mostrarMensajeAnimo() {
     setTimeout(function () {
-        if (respuestasCorrectas % 2 === 0 && respuestasCorrectas > 0) {
+        if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
             var mensajeAnimo = document.createElement('div');
             mensajeAnimo.className = 'dialogo-animo';
             mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
@@ -286,13 +286,13 @@ function representarComoManzanas(cantidad) {
     var imagenesManzana = [];
     var manzanasPorFila = 5;
 
-    for (var i = 0; i < cantidad; i++) {
-        // Crear imagen de manzana
-        var imgManzana = document.createElement('img');
-        imgManzana.src = 'Recursos/img/manzana.png';
-        imgManzana.alt = 'manzana';
-        imgManzana.className = 'manzana-img';
+    // Crear imagen de manzana
+    var imgManzana = document.createElement('img');
+    imgManzana.src = 'Recursos/img/manzana.png';
+    imgManzana.alt = 'manzana';
+    imgManzana.className = 'manzana-img';
 
+    for (var i = 0; i < cantidad; i++) {
         // Agregar imagen a la fila actual
         if (i % manzanasPorFila === 0) {
             // Crear nueva fila
@@ -302,11 +302,12 @@ function representarComoManzanas(cantidad) {
         }
 
         // Agregar la imagen a la fila actual
-        imagenesManzana[imagenesManzana.length - 1].appendChild(imgManzana);
+        imagenesManzana[imagenesManzana.length - 1].appendChild(imgManzana.cloneNode(true));
     }
 
     return imagenesManzana;
 }
+
 
 
 function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {

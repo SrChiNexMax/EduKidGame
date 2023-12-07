@@ -84,7 +84,7 @@
                 <img class="abejaImg" src="Recursos/img/abejaJuego.png">
             </div>
             <div id="popup">
-                <p>Resuelve el problema matemático:</p>
+                <p id="enunciado">Resuelve el siguiente<br> ejercicio</p>
                 <div id="problemaMatematicoDiv">
                     <!-- El contenido del problema matemático se llenará dinámicamente-->
                 </div>
@@ -93,8 +93,8 @@
                     <div class="btnEvaluar" onclick="evaluarRespuesta()">Evaluar</div>
                 </div>
 
-                <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
-                <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
+                <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema <br>matemático correctamente. 😉</p>
+                <p id="mensajeIntento" style="display:none;">️ ¡Ups! Respuesta incorrecta, sigue <br>intentando. ☹️</p>
 
                 <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
             </div>        

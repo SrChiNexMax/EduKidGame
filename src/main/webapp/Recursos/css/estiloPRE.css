@@ -225,37 +225,72 @@ a:visited{
 #popup {
     font-family: 'Gotham';
     color: white;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to bottom, #F8730E, #DD860A);
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 650px;
+    background-image: url('../img/Pizarra.png');
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1200px;
+    height: 750px;
+    opacity: 100;
+    animation: fadeInOut 0.5s ease-in-out forwards;
 }
 
-#problemaMatematicoDiv{
+#enunciado {
+    font-size: 40px;
+    margin-top: 120px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#problemaMatematicoDiv {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.pProblema{
-    text-decoration: none;
-    margin: 0;
+#problemaMatematicoDiv p.pProblema {
+    color: white;
+    font-size: 6rem;
+    margin-top: 50px; 
+    margin-bottom: 10px;
+
+}
+
+#mensajeFelicitaciones{
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#mensajeIntento {
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 0px;
+    text-align: center;
 }
 
 #contenedorRespuesta {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.btnEvaluar{
+#respuestaInput {
+    all: unset;
+    margin-bottom: 10px;
+}
+
+.btnEvaluar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,13 +301,15 @@ a:visited{
     border-radius: 10px;
     width: 100px;
     height: 40px;
-    left: 0.8%;
+    margin-top: 30px;
+    margin-left: 10px;
 }
 
-.btnEvaluar:hover{
+.btnEvaluar:hover {
     background: linear-gradient(to bottom, #E9AB46, #DD8509);
     border: 10px solid #F0C30C;
 }
+
 
 #respuestaInput{
     all: unset;
@@ -493,23 +530,9 @@ a:visited{
     
 }
 
-
+/* Estilo para las imágenes de manzanas */
 .manzana-img {
-    width: 50px;  /* Ajusta el tamaño según tus preferencias */
-    height: auto; /* Para mantener la proporción original */
-    margin-right: 2px; /* Ajusta el margen según tus preferencias */
-}
-    
-.fila-manzanas {
-display: flex;
-justify-content: center;
-margin-bottom: 5px;  /* Ajusta el margen entre filas según tus preferencias */
-
-.fila-manzanas img {
-width: 25px;
-height: auto;
-margin-right: 5px; /* Ajusta el margen según tus preferencias */
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    margin: 5px; /* Ajusta el margen según tus necesidades */
 }
