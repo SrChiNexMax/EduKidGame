@@ -315,23 +315,25 @@ a:visited{
 
 }
 
-/*Parte del problema matematico*/
 
 #popup {
     font-family: 'Gotham';
     color: white;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to bottom, #F8730E, #DD860A);
-    border: 10px solid #f2c561;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 650px;
+    background-image: url('../img/Pizarra.png');
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 1200px;
+    height: 750px;
+    opacity: 100;
+    animation: fadeInOut 0.5s ease-in-out forwards;
 }
 
 #problemaMatematicoDiv{
@@ -339,15 +341,48 @@ a:visited{
     justify-content: center;
 }
 
-.pProblema{
-    text-decoration: none;
-    margin: 0;
+#enunciado {
+    font-size: 40px;
+    margin-top: 120px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#problemaMatematicoDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#problemaMatematicoDiv p.pProblema {
+    color: white;
+    font-size: 6rem;
+    margin-top: 50px; 
+    margin-bottom: 10px;
+
+}
+
+
+#mensajeFelicitaciones{
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#mensajeIntento {
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 0px;
+    text-align: center;
 }
 
 #contenedorRespuesta {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .btnEvaluar{

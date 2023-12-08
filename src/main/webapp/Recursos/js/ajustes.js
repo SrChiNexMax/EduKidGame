@@ -252,3 +252,5 @@ btnIzquierda.addEventListener('click',function(){
 btnDerecha.addEventListener('click',function(){
     Siguiente();
 });
+
+
