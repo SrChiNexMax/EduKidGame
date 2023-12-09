@@ -51,8 +51,8 @@
         </div>
 
         <div class="slider-buttons">
-          <button id="prev-btn">Atras</button>
-          <button id="next-btn">Siguiente</button>
+          <button id="prev-btn">⏪</button>
+          <button id="next-btn">⏩</button>
         </div>
 
 

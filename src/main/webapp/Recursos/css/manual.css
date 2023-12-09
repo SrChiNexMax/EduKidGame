@@ -234,10 +234,11 @@ a:visited{
   height: 600px; /* Ajusta la altura según tus necesidades */
   overflow: hidden;
   margin: 0 auto; /* Para centrar horizontalmente */
-  margin-top: 70px;
+  margin-top: 50px;
   align-content: center;
-  border: 5px solid #FFA500; /* Color naranja y grosor del borde */
-  border-radius: 8px; /* Ajusta el radio de la esquina si deseas bordes redondeados */
+  border: 15px solid red; /* Color naranja y grosor del borde */
+  border-radius: 20px; /* Ajusta el radio de la esquina si deseas bordes redondeados */
+  z-index: 10;
 }
 
 .slide {
