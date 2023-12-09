@@ -274,7 +274,7 @@ a:visited{
   background: linear-gradient(to bottom, #e08e16, #ecb44a);
   border: 10px solid #F2C560;
   border-radius: 10px;
-  color: white;
+  color: black;
   cursor: pointer;
   padding: 10px 20px; /* Ajustamos el espacio alrededor del texto */
 }

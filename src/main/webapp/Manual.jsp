@@ -46,13 +46,13 @@
           <div class="slide">
             <img src="Recursos/img/Interfaz.png" alt="Imagen 1">
             <img src="Recursos/img/Tip.JPG" alt="Imagen 2">
-            <img src="Recursos/img/EjercicioPropuesto.png" alt="Imagen 3">
+            <img src="Recursos/img/EjercicioPropuesto.png   " alt="Imagen 3">
           </div>
         </div>
 
         <div class="slider-buttons">
-          <button id="prev-btn">⏪</button>
-          <button id="next-btn">⏩</button>
+          <button id="prev-btn"> ANTERIOR</button>
+          <button id="next-btn">SIGUIENTE</button>
         </div>
 
 
