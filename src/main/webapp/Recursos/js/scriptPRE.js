@@ -190,11 +190,11 @@ function mostrarDialogoExito() {
     console.log('Ejercicios completados:', ejerciciosCompletados);
 
     // Verifica si el contador de ejercicios completados ha llegado a 6
-    if (ejerciciosCompletados === 6) {
+    if (ejerciciosCompletados === totalEjercicios) {
         // Espera 6 segundos antes de mostrar el diálogo de éxito
         setTimeout(function () {
             var dialogoExito = document.createElement('div');
-            dialogoExito.className = 'dialogo-exito';
+            dialogoExito.className = 'dialogo-final';
             dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
             document.body.appendChild(dialogoExito);
 
@@ -221,7 +221,7 @@ function mostrarDialogoExito() {
             setTimeout(function () {
                 document.body.removeChild(dialogoExito);
                 particulas.style.display = 'none';
-            }, 5000);
+            }, 6000);
         }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
     }
 }
@@ -232,19 +232,26 @@ function mostrarMensajeAnimo() {
     setTimeout(function () {
         if (respuestasCorrectas % 3 === 0 && respuestasCorrectas > 0) {
             var mensajeAnimo = document.createElement('div');
-            mensajeAnimo.className = 'dialogo-exito';
+            mensajeAnimo.className = 'dialogo-animo';
             mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
             document.body.appendChild(mensajeAnimo);
 
             var abejaAnimo = document.createElement('div');
             abejaAnimo.className = 'abeja-animo';
-            abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
+            abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/AbejaAnimo.png">';
             document.body.appendChild(abejaAnimo);
+            
+            var premio = document.createElement('div');
+            premio.className = 'premio';
+            premio.innerHTML = '<img class="premio-img" src="Recursos/img/medalla.png">';
+            document.body.appendChild(premio);
 
             setTimeout(function () {
                 document.body.removeChild(mensajeAnimo);
                 document.body.removeChild(abejaAnimo);
-            }, 1800); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
+                document.body.removeChild(premio);
+
+            }, 5000); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
         }
     }, 6000);
 }
@@ -279,13 +286,13 @@ function representarComoManzanas(cantidad) {
     var imagenesManzana = [];
     var manzanasPorFila = 5;
 
-    for (var i = 0; i < cantidad; i++) {
-        // Crear imagen de manzana
-        var imgManzana = document.createElement('img');
-        imgManzana.src = 'Recursos/img/manzana.png';
-        imgManzana.alt = 'manzana';
-        imgManzana.className = 'manzana-img';
+    // Crear imagen de manzana
+    var imgManzana = document.createElement('img');
+    imgManzana.src = 'Recursos/img/manzana.png';
+    imgManzana.alt = 'manzana';
+    imgManzana.className = 'manzana-img';
 
+    for (var i = 0; i < cantidad; i++) {
         // Agregar imagen a la fila actual
         if (i % manzanasPorFila === 0) {
             // Crear nueva fila
@@ -295,11 +302,12 @@ function representarComoManzanas(cantidad) {
         }
 
         // Agregar la imagen a la fila actual
-        imagenesManzana[imagenesManzana.length - 1].appendChild(imgManzana);
+        imagenesManzana[imagenesManzana.length - 1].appendChild(imgManzana.cloneNode(true));
     }
 
     return imagenesManzana;
 }
+
 
 
 function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {

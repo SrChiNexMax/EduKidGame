@@ -199,7 +199,7 @@ function mostrarDialogoExito() {
         // Espera 6 segundos antes de mostrar el diálogo de éxito
         setTimeout(function () {
             var dialogoExito = document.createElement('div');
-            dialogoExito.className = 'dialogo-exito';
+            dialogoExito.className = 'dialogo-final';
             dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
             document.body.appendChild(dialogoExito);
 
@@ -232,28 +232,32 @@ function mostrarDialogoExito() {
 }
 
 function mostrarMensajeAnimo() {
-    // Espera 6 segundos antes de mostrar el mensaje de ánimo
     setTimeout(function () {
-        // Muestra el mensaje de ánimo
-        var mensajeAnimo = document.createElement('div');
-        mensajeAnimo.className = 'dialogo-exito';
-        mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
-        document.body.appendChild(mensajeAnimo);
+        if (respuestasCorrectas % 1 === 0 && respuestasCorrectas > 0) {
+            var mensajeAnimo = document.createElement('div');
+            mensajeAnimo.className = 'dialogo-animo';
+            mensajeAnimo.innerHTML = '<p>¡Vas muy bien, sigue así!</p>';
+            document.body.appendChild(mensajeAnimo);
 
-        // Muestra la abeja al mismo tiempo que el mensaje de ánimo
-        var abejaAnimo = document.createElement('div');
-        abejaAnimo.className = 'abeja-animo';
-        abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/abejaPRE.png">';
-        document.body.appendChild(abejaAnimo);
+            var abejaAnimo = document.createElement('div');
+            abejaAnimo.className = 'abeja-animo';
+            abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/AbejaAnimo.png">';
+            document.body.appendChild(abejaAnimo);
+            
+            var premio = document.createElement('div');
+            premio.className = 'premio';
+            premio.innerHTML = '<img class="premio-img" src="Recursos/img/medalla.png">';
+            document.body.appendChild(premio);
 
-        // Espera 6 segundos antes de eliminar el mensaje
-        setTimeout(function () {
-            document.body.removeChild(mensajeAnimo);
-            document.body.removeChild(abejaAnimo);
-        }, 1800);
-    }, 6000); // Espera 6 segundos antes de mostrar el mensaje
+            setTimeout(function () {
+                document.body.removeChild(mensajeAnimo);
+                document.body.removeChild(abejaAnimo);
+                document.body.removeChild(premio);
+
+            }, 5000); // El mensaje de ánimo se muestra durante 1.8 segundos, ajusta según sea necesario
+        }
+    }, 6000);
 }
-
 
 let tiempoExpirado = false;
 
@@ -305,7 +309,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     var textoProblema = document.createTextNode(problemaMatematico);
     respuestaCorrectaPopup.appendChild(textoProblema);
 
-    respuestaCorrectaPopup.appendChild(document.createTextNode(" = "));
+    respuestaCorrectaPopup.appendChild(document.createTextNode(" = 🍎"));
 
     var textoRespuesta = document.createTextNode(respuestaCorrecta);
     respuestaCorrectaPopup.appendChild(textoRespuesta);

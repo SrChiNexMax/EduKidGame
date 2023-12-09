@@ -1,0 +1,293 @@
+@font-face{
+    font-family: 'Bukhari';
+    src:url(../fuentes/Bukhari-Script.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Horta';
+    src:url(../fuentes/Horta.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Minnie';
+    src:url(../fuentes/Minnie.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Gotham';
+    src:url(../fuentes/Gotham.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #E9D5B0;
+    position: relative;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+/*Parte del cabezal*/
+
+.Cabezal{
+    height: 11vh;
+    width: 100vw;
+    background-color: #DD860A;
+    position: relative;
+    z-index: 1;
+}
+
+.botonInicio{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.8%;
+    z-index: 2;
+}
+
+.botonInicio:hover{
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+}
+
+.titulo1{
+    color: white;
+    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
+    font-size: 3rem;
+    font-family: 'Bukhari';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%) rotate(350deg);
+    z-index: 2;
+}
+.titulo2{
+    color: white;
+    text-shadow: 8px 8px 3px rgba(102, 51, 51, 0.5), 13px 13px 3px rgba(173, 87, 87, 0.3);
+    font-size: 3rem;
+    font-family: 'Bukhari';
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%) rotate(350deg);
+    z-index: 2;
+}
+.circulo{
+    width: 200px;
+    height: 200px;
+    background-color: #DD860A;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.abejaCJI{
+    width: 50px;
+    height: 50px;
+}
+
+.abejaCJ{
+    position: fixed;
+    top: 1.5%;
+    left: 44.5%;
+    transform: rotate(350deg);
+    z-index: 2;
+    filter: drop-shadow(-5px 0px 10px rgba(0, 0, 0, 0.8));
+}
+
+.soporte{
+    margin: 0;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.8%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.soporteimg{
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.soporte p {
+    padding: 0;
+    margin: 0;
+}
+
+.manual{
+    margin: 0;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.manualimg{
+    filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(-10px 5px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.manual p {
+    padding: 0;
+    margin: 0;
+}
+
+
+.florImg{
+    width: 225px;
+    height: 450px;
+}
+
+.florImg2{
+    width: 170px;
+    height: 340px;
+}
+
+.florF1{
+    position: fixed;
+    bottom: -170px;
+    right: -50px;
+    transform: rotate(350deg);
+    z-index: 0;
+}
+
+.florF2{
+    position: fixed;
+    bottom: -170px;
+    right: 0px;
+    transform: rotate(310deg);
+    z-index: 0;
+}
+
+.panalImg{
+    width: 500px;
+    height: 500px;
+}
+
+.panalF1{
+    position: fixed;
+    bottom: -200px;
+    left: -60px;
+}
+
+.panalF2{
+    position: fixed;
+    bottom: 190px;
+    left: -240px;
+}
+
+.panalF3{
+    position: fixed;
+    top: -160px;
+    right: -110px;
+}
+.panalF4{
+    position: fixed;
+    top: 235px;
+    right: -290px;
+}
+
+
+#slider-container {
+  position: relative;
+  width: 1310px; /* Ajusta el ancho según tus necesidades */
+  height: 705px; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+  margin: 0 auto; /* Para centrar horizontalmente */
+  margin-top: 0px;
+  align-content: center;
+  border: 15px solid red; /* Color naranja y grosor del borde */
+  border-radius: 20px; /* Ajusta el radio de la esquina si deseas bordes redondeados */
+  z-index: 10;
+}
+
+.slide {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.slide img.active {
+  display: block;
+}
+
+
+/* Resto de tu código... */
+
+
+.slider-buttons {
+  display: flex;
+  justify-content: center; /* Centramos horizontalmente los botones */
+  align-items: center; /* Centramos verticalmente los botones */
+  margin-top: 10px;
+}
+
+#prev-btn, #next-btn {
+  font-family: 'Minnie'; /* Utilizamos la misma fuente que el botón de inicio */
+  font-size: 1.5rem;
+  background: linear-gradient(to bottom, #e08e16, #ecb44a);
+  border: 10px solid #F2C560;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 20px; /* Ajustamos el espacio alrededor del texto */
+}
+
+#prev-btn:hover, #next-btn:hover {
+  background: linear-gradient(to bottom, #E9AB46, #DD8509);
+  border: 10px solid #F0C30C;
+}
+
+#prev-btn {
+  margin-right: 10px; /* Añadimos un margen derecho entre los botones */
+}
+
+#next-btn {
+  order: 2; /* Cambia el orden según tus preferencias */
+}

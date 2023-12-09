@@ -119,9 +119,8 @@
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             </form>
-        </div>
-
-
+        </div>     
+        
         <div id="imgDivContenedor">
             <div id="sliderImagen" class="sliderImagen">
                 <div class="slidersection">
@@ -163,12 +162,15 @@
                 <div class="slidersection">
                     <img class="imgS" src="Recursos/img/Mensaje_apoyo.JPG" alt="Imagen de Manual de la pagina Index"/>
                 </div>
+               
+
             </div>
 
             <!-- Botones de navegación -->
             <button class="sliderButton" id="prevButton" onclick="Atras()">◄</button>
             <button class="sliderButton" id="nextButton" onclick="Siguiente()">►</button>
         </div>
+
 
         <div>
             <div class="florF1">
@@ -189,7 +191,7 @@
             <div class="panalF4">
                 <img class="panalImg" src="Recursos/img/panal2.png" alt="Panal de Abeja"/>
             </div>
-        </div>
+         
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.

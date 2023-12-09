@@ -101,7 +101,7 @@
             </div>
         </div>
         <div id="popup">
-            <p>Resuelve el problema matemático:</p>
+            <p id="enunciado">Resuelve el siguiente<br> ejercicio</p>
             <div id="problemaMatematicoDiv">
                 <!-- El contenido del problema matemático se llenará dinámicamente-->
             </div>
@@ -110,12 +110,11 @@
                 <div class="btnEvaluar" onclick="evaluarRespuesta()">Evaluar</div>
             </div>
 
-            <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema matemático correctamente.</p>
-            <p id="mensajeIntento" style="display:none;">¡Ups! Respuesta incorrecta, sigue intentando.</p>
-            
-            <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
+            <p id="mensajeFelicitaciones" style="display:none;">¡Felicidades! Has resuelto el problema <br>matemático correctamente. 😉</p>
+            <p id="mensajeIntento" style="display:none;">️ ¡Ups! Respuesta incorrecta, sigue <br>intentando. ☹️</p>
 
-        </div>
+            <audio id="audioFelicitaciones" src="Recursos/sonido/Felicitaciones.mp3"></audio>
+        </div>      
         
         <audio id="musicaFondo" loop>
             <source src="Recursos/sonido/musicaF.mp3" type="audio/mpeg">
