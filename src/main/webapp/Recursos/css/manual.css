@@ -230,11 +230,11 @@ a:visited{
 
 #slider-container {
   position: relative;
-  width: 1200px; /* Ajusta el ancho según tus necesidades */
-  height: 600px; /* Ajusta la altura según tus necesidades */
+  width: 1310px; /* Ajusta el ancho según tus necesidades */
+  height: 705px; /* Ajusta la altura según tus necesidades */
   overflow: hidden;
   margin: 0 auto; /* Para centrar horizontalmente */
-  margin-top: 50px;
+  margin-top: 0px;
   align-content: center;
   border: 15px solid red; /* Color naranja y grosor del borde */
   border-radius: 20px; /* Ajusta el radio de la esquina si deseas bordes redondeados */
