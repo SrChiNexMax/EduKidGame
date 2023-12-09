@@ -210,7 +210,6 @@ function mostrarSoporte() {
 function mostrarManual() {
     var popup = document.getElementById('imgDivContenedor');
     popup.style.display = 'block';
-    showSlide(currentIndex);
 }
 
 const slider = document.querySelector("#sliderImagen");
@@ -222,7 +221,7 @@ const btnDerecha = document.querySelector("#nextButton");
 
 slider.insertAdjacentElement('afterbegin', sliderSectionLast);
 
-function Siguiente() {
+function Siguiente(){
     let sliderSectionFirst = document.querySelectorAll(".slidersection")[0];
     slider.style.marginLeft = "-200%";
     slider.style.transition = "all 0.5s";
@@ -233,7 +232,7 @@ function Siguiente() {
     }, 100);
 }
 
-function Atras() {
+function Atras(){
     let sliderSection = document.querySelectorAll(".slidersection");
     let sliderSectionLast = sliderSection[sliderSection.length - 1];
     slider.style.marginLeft = "0";
