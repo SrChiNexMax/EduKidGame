@@ -208,48 +208,6 @@ function mostrarSoporte() {
 }
 
 function mostrarManual() {
-    var popup = document.getElementById('imgDivContenedor');
-    popup.style.display = 'block';
+    window.location.href = 'Manual.jsp';
 }
-
-const slider = document.querySelector("#sliderImagen");
-let sliderSection = document.querySelectorAll(".slidersection");
-let sliderSectionLast = sliderSection[sliderSection.length - 1];
-
-const btnIzquierda = document.querySelector("#prevButton");
-const btnDerecha = document.querySelector("#nextButton");
-
-slider.insertAdjacentElement('afterbegin', sliderSectionLast);
-
-function Siguiente(){
-    let sliderSectionFirst = document.querySelectorAll(".slidersection")[0];
-    slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 0.5s";
-    setTimeout(function () {
-        slider.style.transition = "none";
-        slider.insertAdjacentElement('beforeend', sliderSectionFirst);
-        slider.style.marginLeft = "-100%";
-    }, 100);
-}
-
-function Atras(){
-    let sliderSection = document.querySelectorAll(".slidersection");
-    let sliderSectionLast = sliderSection[sliderSection.length - 1];
-    slider.style.marginLeft = "0";
-    slider.style.transition = "all 0.5s";
-    setTimeout(function () {
-        slider.style.transition = "none";
-        slider.insertAdjacentElement('beforeend', sliderSectionLast);
-        slider.style.marginLeft = "-100%";
-    }, 100);
-}
-
-btnIzquierda.addEventListener('click',function(){
-    Atras();
-});
-
-btnDerecha.addEventListener('click',function(){
-    Siguiente();
-});
-
 

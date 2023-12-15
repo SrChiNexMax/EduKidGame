@@ -50,3 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Llama a updateSlider al cargar la página para mostrar la primera imagen
   updateSlider();
 });
+
+function aplicarFiltro(tipoDaltonismo) {
+    document.body.className = tipoDaltonismo;
+
+    localStorage.setItem('filtroDaltonismo', tipoDaltonismo);
+}
