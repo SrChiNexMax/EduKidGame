@@ -91,8 +91,8 @@
         <div class="difdiv">
             Dificultad
             <div class="botonesdif">
-                <div class="btnFacil" onclick="aplicarDif('facil')">Facil</div>
-                <div class="btnDificil" onclick="aplicarDif('dificil')">Dificil</div>
+                <div class="btnFacil" onclick="aplicarDif(10)">Facil</div>
+                <div class="btnDificil" onclick="aplicarDif(20)">Dificil</div>
             </div>
         </div>
 

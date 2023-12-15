@@ -53,20 +53,9 @@ function mostrarPopup() {
 function generarProblemaMatematico() {
     let num1, num2;
     var dif = localStorage.getItem('dificultad');
-    switch (dif) {
-        case 'facil':
-            num1 = Math.floor(Math.random() * 10) + 1;
-            num2 = Math.floor(Math.random() * num1) + 1;
-            break;
-        case 'dificil':
-            num1 = Math.floor(Math.random() * 20) + 1;
-            num2 = Math.floor(Math.random() * num1) + 1;
-            break;
-        default:
-            num1 = Math.floor(Math.random() * 10) + 1;
-            num2 = Math.floor(Math.random() * num1) + 1;
-            break;
-    }
+    num1 = Math.floor(Math.random() * dif) + 1;
+    num2 = Math.floor(Math.random() * num1) + 1;
+
     let operador = Math.random() < 0.5 ? '+' : '-';
 
     return `${num1} ${operador} ${num2}`;
@@ -195,11 +184,39 @@ function mostrarDialogoExito() {
         setTimeout(function () {
             var dialogoExito = document.createElement('div');
             dialogoExito.className = 'dialogo-final';
+            dialogoExito.style.textAlign = 'center';
+            dialogoExito.style.padding = '40px';
             dialogoExito.innerHTML = '<p>¡Felicidades! Has completado todos los ejercicios con éxito.</p>';
             document.body.appendChild(dialogoExito);
 
+            var reiniciarButton = document.createElement('button');
+            reiniciarButton.innerHTML = 'Reiniciar';
+            reiniciarButton.className = 'rboton';
+            reiniciarButton.addEventListener('click', function () {
+                location.reload();
+                ejerciciosCompletados = 5;
+                respuestasCorrectas = 0;
+                totalEjercicios = 6;
+                respuestasIncorrectas = 0;
+            });
+            dialogoExito.appendChild(reiniciarButton);
+
+            var siguienteNivelButton = document.createElement('button');
+            siguienteNivelButton.innerHTML = 'Siguiente Nivel';
+            siguienteNivelButton.className = 'sboton';
+            siguienteNivelButton.addEventListener('click', function () {
+                localStorage.setItem('dificultad', parseInt(localStorage.getItem('dificultad'), 10)+10);
+                location.reload();
+                ejerciciosCompletados = 0;
+                respuestasCorrectas = 0;
+                totalEjercicios = 6;
+                respuestasIncorrectas = 0;
+            });
+            dialogoExito.appendChild(siguienteNivelButton);
+
             var particulas = document.getElementById('particles-js');
             particulas.style.display = 'block';
+            particulas.style.zIndex = '1';
 
             fetch(jsonUrl)
                     .then(response => response.json())
@@ -207,7 +224,6 @@ function mostrarDialogoExito() {
                         // Llamar a particlesJS con la configuración del JSON
                         particlesJS('particles-js', configParticles);
 
-                        // Otras funciones y código de tu script...
                     })
                     .catch(error => {
                         console.error('Error al cargar el archivo JSON:', error);
@@ -217,11 +233,7 @@ function mostrarDialogoExito() {
             var audioFelicitaciones = document.getElementById('audioFelicitaciones');
             audioFelicitaciones.play();
 
-            // Ocultar el mensaje después de 5 segundos
-            setTimeout(function () {
-                document.body.removeChild(dialogoExito);
-                particulas.style.display = 'none';
-            }, 6000);
+
         }, 6000); // Espera 6 segundos antes de ejecutar la función mostrarDialogoExito
     }
 }
@@ -240,7 +252,7 @@ function mostrarMensajeAnimo() {
             abejaAnimo.className = 'abeja-animo';
             abejaAnimo.innerHTML = '<img class="abeja-animo-img" src="Recursos/img/AbejaAnimo.png">';
             document.body.appendChild(abejaAnimo);
-            
+
             var premio = document.createElement('div');
             premio.className = 'premio';
             premio.innerHTML = '<img class="premio-img" src="Recursos/img/medalla.png">';
@@ -317,7 +329,7 @@ function mostrarRespuestaCorrecta(problemaMatematico, respuestaCorrecta) {
     var textoRetroalimentacion = document.createElement('p');
     textoRetroalimentacion.textContent = 'No olvides lo siguiente:';
     respuestaCorrectaPopup.appendChild(textoRetroalimentacion);
-    
+
     // Representar el problema matemático
     for (var i = 0; i < problemaMatematico.length; i++) {
         var caracter = problemaMatematico[i];

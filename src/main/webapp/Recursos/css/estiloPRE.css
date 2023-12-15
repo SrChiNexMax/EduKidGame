@@ -152,7 +152,7 @@ a:visited{
     height: 89%;
     width: 100vw;
     position: absolute;
-    background-image: url('../img/fondo.jpg');
+    background-image: url(../img/fondo.jpg);
     background-size: contain;
 }
 
@@ -431,7 +431,7 @@ a:visited{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url(../img/felicitaciones.png); /* Ruta de tu imagen de fondo */
+    background-image: url(../img/felicitaciones.png);
     background-size: cover;
     background-position: center; /* Centra la imagen */
     padding: 20px;
@@ -532,7 +532,47 @@ a:visited{
 
 /* Estilo para las imágenes de manzanas */
 .manzana-img {
-    width: 50px; /* Ajusta el ancho según tus necesidades */
-    height: 50px; /* Ajusta la altura según tus necesidades */
-    margin: 5px; /* Ajusta el margen según tus necesidades */
+    width: 50px; 
+    height: 50px; 
+    margin: 5px; 
+}
+
+.rboton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.rboton:hover {
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
+}
+
+.sboton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minnie';
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #e08e16, #ecb44a);
+    border: 10px solid #F2C560;
+    border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.sboton:hover {
+    background: linear-gradient(to bottom, #E9AB46, #DD8509);
+    border: 10px solid #F0C30C;
 }
