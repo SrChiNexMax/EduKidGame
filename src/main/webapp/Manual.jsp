@@ -44,9 +44,15 @@
         
         <div id="slider-container">
           <div class="slide">
-            <img src="Recursos/img/Interfaz.png" alt="Imagen 1">
-            <img src="Recursos/img/Tip.JPG" alt="Imagen 2">
-            <img src="Recursos/img/EjercicioPropuesto.png   " alt="Imagen 3">
+            <img src="Recursos/img/Inicio.png" alt="Imagen 1">
+            <img src="Recursos/img/Info.jpg" alt="Imagen 2">
+            <img src="Recursos/img/Instrucciones.JPG" alt="Imagen 3">            
+            <img src="Recursos/img/Interfaz.png" alt="Imagen 4">
+            <img src="Recursos/img/Tip.JPG" alt="Imagen 5">
+            <img src="Recursos/img/EjercicioPropuesto.png" alt="Imagen 6">
+            <img src="Recursos/img/Retro.png" alt="Imagen 7">
+            <img src="Recursos/img/Animo.png" alt="Imagen 8">
+            <img src="Recursos/img/Ajustes.JPG" alt="Imagen 9">
           </div>
         </div>
 
